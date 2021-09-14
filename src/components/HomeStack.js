@@ -6,10 +6,11 @@ import React from 'react';
 import Header from './Header';
 import Top from '../screens/TopBar';
 import HomeDealer from '../screens/homeDealer';
+import SelectDealer from '../screens/selectDealer';
 
 const screens = {
   Home: {
-    screen: HomeDealer,
+    screen: SelectDealer,
     navigationOptions: {
       headerTitle: () => <Header title="LITRO GAS" />,
     },
