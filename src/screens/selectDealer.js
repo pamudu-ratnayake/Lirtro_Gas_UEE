@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {
   View,
   Text,
@@ -8,11 +8,14 @@ import {
   TouchableWithoutFeedback,
   Keyboard,
   ImageBackground,
+  Picker,
 } from 'react-native';
 
 const image = require('../assets/img/background.png');
 
 const SelectDealer = () => {
+  const [filter, setFilter] = useState('1-2 km');
+
   return (
     <TouchableWithoutFeedback
       onPress={() => {
@@ -21,10 +24,19 @@ const SelectDealer = () => {
       <View style={styles.container}>
         <ImageBackground source={image} style={styles.image} resizeMode="cover">
           <ScrollView>
-            <View style={styles.filter}>
-              <Image source={require('../assets/img/icons8-filter-24.png')}></Image>
-              <Text style={styles.filterTxt}>Filter By</Text>
-              <Text>drop Down</Text>
+            <View style={styles.filterArea}>
+              <View style={styles.filterIcon}>
+                <Image source={require('../assets/img/icons8-filter-24.png')} />
+              </View>
+              {/* <Text style={styles.filterTxt}>Filter By</Text> */}
+              <View style={styles.filter}>
+                <Picker>
+                  <Picker.Item lable="1 - 2 km" value="1 - 2 km" />
+                  <Picker.Item lable="1 - 3 km" value="1 - 3 km" />
+                  <Picker.Item lable="1 - 4 km" value="1 - 4 km" />
+                  <Picker.Item lable="1 - 5 km" value="1 - 5 km" />
+                </Picker>
+              </View>
             </View>
             <View style={styles.card}>
               <Text style={styles.dealerName}>DEALER</Text>
@@ -34,12 +46,12 @@ const SelectDealer = () => {
                 <Text style={styles.dealerInfor2}>0754323677767</Text>
               </View>
               <View style={styles.row}>
-              <Text style={styles.dealerInfor}>Distance:</Text>
-              <Text style={styles.dealerInfor2}>10 m</Text>
+                <Text style={styles.dealerInfor}>Distance:</Text>
+                <Text style={styles.dealerInfor2}>10 m</Text>
               </View>
               <View style={styles.row}>
-              <Text style={styles.dealerInfor}>Delivery Charge:</Text>
-              <Text style={styles.dealerInfor2}> LKR. 300</Text>
+                <Text style={styles.dealerInfor}>Delivery Charge:</Text>
+                <Text style={styles.dealerInfor2}> LKR. 300</Text>
               </View>
             </View>
           </ScrollView>
@@ -57,15 +69,33 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
   },
-  filter: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    padding: 10,
+  filterArea: {
+    // flex: 1,
     backgroundColor: '#fff',
+    flexDirection: 'row',
+    justifyContent: 'flex-start',
+    padding: 8,
     borderRadius: 1,
     marginTop: 15,
-    marginHorizontal: 5,
+    marginHorizontal: 6,
+
   },
+  filterIcon: {
+    flex: 1,
+    paddingTop: 3,
+  },
+  filter: {
+    flex: 8,
+    backgroundColor: '#F5F5F5',
+    height: 30,
+  },
+  // filterTxt: {
+  //   backgroundColor: 'red',
+  //   flex: ,
+  //   padding: 2,
+  //   color: '#bbb',
+  //   fontSize: 15,
+  // },
   card: {
     justifyContent: 'space-between',
     paddingHorizontal: 10,
@@ -85,16 +115,12 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   dealerInfor: {
-    paddingHorizontal:10,
+    paddingHorizontal: 10,
     paddingVertical: 1,
     fontSize: 15,
   },
   dealerInfor2: {
     paddingVertical: 1,
-    fontSize: 15,
-  },
-  filterTxt: {
-    color: '#bbb',
     fontSize: 15,
   },
 });
