@@ -30,11 +30,16 @@ const SelectDealer = () => {
               </View>
               {/* <Text style={styles.filterTxt}>Filter By</Text> */}
               <View style={styles.filter}>
-                <Picker>
-                  <Picker.Item lable="1 - 2 km" value="1 - 2 km" />
-                  <Picker.Item lable="1 - 3 km" value="1 - 3 km" />
-                  <Picker.Item lable="1 - 4 km" value="1 - 4 km" />
-                  <Picker.Item lable="1 - 5 km" value="1 - 5 km" />
+                <Picker
+                mode="dropdown"
+                itemStyle={styles.pickerItem}
+                style={styles.Picker}
+                selectedValue={filter}
+                onValueChange={(itemValue, itemIndex)=> setFilter({filter:itemValue})}>
+                  <Picker.Item lable="1-2km" value="1-2km" />
+                  <Picker.Item lable="1-3km" value="1-3km" />
+                  <Picker.Item lable="1-4km" value="1-4km" />
+                  <Picker.Item lable="1-5km" value="1-5km" />
                 </Picker>
               </View>
             </View>
@@ -86,8 +91,20 @@ const styles = StyleSheet.create({
   },
   filter: {
     flex: 8,
+    // paddingRight: 1,
+    fontSize: 15,
+    color: 'red',
     backgroundColor: '#F5F5F5',
     height: 30,
+  },
+  Picker: {
+    flex: 1,
+    height:60, 
+    width:350
+  },
+  pickerItem: {
+    color: '#333333',
+    alignItems: 'center',
   },
   // filterTxt: {
   //   backgroundColor: 'red',
