@@ -1,13 +1,11 @@
 import React from 'react';
-import { Text, View } from 'react-native';
+import {Text, View} from 'react-native';
 //import Login from './src/components/login';
-import Navigator from './src/components/HomeStack'
+import Navigator from './src/components/HomeStack';
 
-const App = (props) => {
+const App = props => {
   return (
-
-  <Navigator/>
-  
-  )
-}
+    <Navigator /> // eslint-disable-line
+  );
+};
 export default App;
