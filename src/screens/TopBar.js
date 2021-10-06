@@ -4,7 +4,7 @@ import {View, Text, StyleSheet} from 'react-native';
 
 const Top = props => {
   return (
-    <View>
+    <View style={styles.test}>
       <Text >Welcome Backkkkkkkk</Text>
     </View>
     // <Container>
@@ -12,5 +12,14 @@ const Top = props => {
     // </Container>
   );
 };
+
+const styles = StyleSheet.create({
+  test: {
+    backgroundColor: "red",
+    width:'100%'
+ 
+  }
+  
+});
 
 export default Top;
