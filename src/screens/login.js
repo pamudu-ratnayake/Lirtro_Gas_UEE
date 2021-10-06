@@ -1,18 +1,15 @@
-import { NavigationContainer } from '@react-navigation/native';
 import React from 'react';
 import {View, Text, StyleSheet, Button} from 'react-native';
 
-
 const Login = ({navigation}) => {
-
   const pressHandler = () => {
-    navigation.navigate('Test');
-  }
+    navigation.navigate('Test2');
+  };
 
   return (
     <View style={styles.welcomeview}>
       <Text style={styles.welcometxt}>Welcome Back</Text>
-      <Button title='go to login' onPress={pressHandler} />
+      <Button title="go to login" onPress={pressHandler} />
     </View>
     // <Container>
     //   <Text>Welcome to login</Text>
@@ -20,21 +17,17 @@ const Login = ({navigation}) => {
   );
 };
 
+
 const styles = StyleSheet.create({
   welcometxt: {
-    backgroundColor: "red",
-
-    
+    backgroundColor: 'red',
   },
-
-  welcomeview:{
+  welcomeview: {
     // backgroundColor: "#2553A8",
     // width: 412,
     // height: 59,
-    marginTop:10
+    marginTop: 10,
   },
-  
-  
 });
 
 export default Login;

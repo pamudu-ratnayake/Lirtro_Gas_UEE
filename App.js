@@ -1,13 +1,12 @@
 import React from 'react';
-import { Text, View } from 'react-native';
-//import Login from './src/components/login';
-import Navigator from './src/components/HomeStack'
+import {Text, View} from 'react-native';
+import Navigator from './src/components/HomeStack';
 
-const App = (props) => {
+const App = props => {
   return (
-
-  <Navigator/>
-  
-  )
-}
+    <>
+      <Navigator />
+    </>
+  );
+};
 export default App;
