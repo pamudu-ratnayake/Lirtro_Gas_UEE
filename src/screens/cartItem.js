@@ -23,7 +23,7 @@ const CartItem = () => {
         Keyboard.dismiss();
       }}>
       <View style={styles.container}>
-        {/* <ImageBackground source={image} style={styles.image} resizeMode="cover"> */}
+        <ImageBackground source={image} style={styles.image} resizeMode="cover">
         <ScrollView>
           <View style={styles.card}>
             <View style={styles.itemDetails}>
@@ -61,7 +61,7 @@ const CartItem = () => {
             </View>
           </View>
         </ScrollView>
-        {/* </ImageBackground> */}
+        </ImageBackground>
       </View>
     </TouchableWithoutFeedback>
   );
@@ -72,6 +72,10 @@ const styles = StyleSheet.create({
     flex: 1,
     // padding: 20,
     // backgroundColor: '#ddd',
+  },
+  image: {
+    flex: 1,
+    justifyContent: 'center',
   },
   card: {
     flex: 1,

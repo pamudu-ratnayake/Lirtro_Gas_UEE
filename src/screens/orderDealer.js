@@ -9,6 +9,7 @@ import {
   Keyboard,
   ImageBackground,
   Picker,
+  TouchableOpacity,
 } from 'react-native';
 
 const image = require('../assets/img/background.png');
@@ -23,45 +24,38 @@ const OrderDealer = () => {
         <ImageBackground source={image} style={styles.image} resizeMode="cover">
           <ScrollView>
             <View style={styles.cardView}>
-              <View style={styles.card}>
-                <View style={styles.row}>
-                  <Text style={styles.cardText}>Pending Orders</Text>
-                  <Image
-                    style={styles.iconImage}
-                    source={require('../assets/img/icons/outline_arrow_forward_ios_black_24dp.png')}
-                  />
-                </View>
-              </View>
 
-              <View style={styles.card}>
-                <View style={styles.row}>
-                  <Text style={styles.cardText}>Accepted Orders</Text>
-                  <Image
+              <TouchableOpacity style={styles.card}>
+                <Text style={styles.cardText}>Pending Orders</Text>
+                {/* <Image
                     style={styles.iconImage}
-                    source={require('../assets/img/icons/outline_arrow_forward_ios_black_24dp.png')}
-                  />
-                </View>
-              </View>
+                    source={require('../assets/img/icons/outline_arrow_forward_ios_white_24dp.png')}
+                  /> */}
+              </TouchableOpacity>
 
-              <View style={styles.card}>
-                <View style={styles.row}>
-                  <Text style={styles.cardText}>Dispatched Orders</Text>
-                  <Image
+              <TouchableOpacity style={styles.card}>
+                <Text style={styles.cardText}>Accepted Orders</Text>
+                {/* <Image
                     style={styles.iconImage}
-                    source={require('../assets/img/icons/outline_arrow_forward_ios_black_24dp.png')}
-                  />
-                </View>
-              </View>
+                    source={require('../assets/img/icons/outline_arrow_forward_ios_white_24dp.png')}
+                  /> */}
+              </TouchableOpacity>
 
-              <View style={styles.card}>
-                <View style={styles.row}>
-                  <Text style={styles.cardText}>Delivered Orders</Text>
-                  <Image
+              <TouchableOpacity style={styles.card}>
+                <Text style={styles.cardText}>Dispatched Orders</Text>
+                {/* <Image
                     style={styles.iconImage}
-                    source={require('../assets/img/icons/outline_arrow_forward_ios_black_24dp.png')}
-                  />
-                </View>
-              </View>
+                    source={require('../assets/img/icons/outline_arrow_forward_ios_white_24dp.png')}
+                  /> */}
+              </TouchableOpacity>
+
+              <TouchableOpacity style={styles.card}>
+                <Text style={styles.cardText}>Delivered Orders</Text>
+                {/* <Image
+                    style={styles.iconImage}
+                    source={require('../assets/img/icons/outline_arrow_forward_ios_white_24dp.png')}
+                  /> */}
+              </TouchableOpacity>
             </View>
           </ScrollView>
         </ImageBackground>
@@ -85,31 +79,29 @@ const styles = StyleSheet.create({
   card: {
     flex: 0.25,
     justifyContent: 'center',
+    alignItems: 'center',
     paddingHorizontal: 10,
-    paddingVertical: 10,
-    backgroundColor: '#fff',
+    // paddingVertical: 5,
+    backgroundColor: '#009dfe',
     borderRadius: 5,
     marginHorizontal: 18,
-    marginVertical: 20,
-  },
-  row: {
-    flex: 1,
-    flexDirection: 'row',
+    marginVertical: 30,
   },
   cardText: {
-    flex: 0.9,
+    // flex: 0.9,
     paddingRight: 10,
     paddingVertical: 20,
     fontSize: 28,
+    color: '#fff',
   },
-  iconImage: {
-    flex: 0.1,
-    width: 40,
-    height: 40,
-    paddingVertical: 20,
-    marginVertical: 20,
-    marginRight: 5,
-  },
+  // iconImage: {
+  //   flex: 0.1,
+  //   width: 25,
+  //   height: 25,
+  //   paddingVertical: 20,
+  //   marginVertical: 20,
+  //   marginRight: 5,
+  // },
 });
 
 export default OrderDealer;
