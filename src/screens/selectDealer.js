@@ -22,11 +22,11 @@ const SelectDealer = () => {
         Keyboard.dismiss();
       }}>
       <View style={styles.container}>
+          
         <ImageBackground source={image} style={styles.image} resizeMode="cover">
-          <ScrollView>
             <View style={styles.filterArea}>
               <View style={styles.filterIcon}>
-                <Image source={require('../assets/img/icons8-filter-24.png')} />
+                <Image source={require('../assets/img/icons/icons8-filter-24.png')} />
               </View>
               {/* <Text style={styles.filterTxt}>Filter By</Text> */}
               <View style={styles.filter}>
@@ -36,13 +36,65 @@ const SelectDealer = () => {
                 style={styles.Picker}
                 selectedValue={filter}
                 onValueChange={(itemValue, itemIndex)=> setFilter({filter:itemValue})}>
-                  <Picker.Item lable="1-2km" value="1-2km" />
+                  <Picker.Item lable="1-2km" value="1-2km"/>
                   <Picker.Item lable="1-3km" value="1-3km" />
                   <Picker.Item lable="1-4km" value="1-4km" />
                   <Picker.Item lable="1-5km" value="1-5km" />
                 </Picker>
               </View>
             </View>
+            <ScrollView>
+            <View style={styles.card}>
+              <Text style={styles.dealerName}>DEALER</Text>
+              <Text style={styles.dealerInfor}>Address</Text>
+              <View style={styles.row}>
+                <Text style={styles.dealerInfor}>Tell:</Text>
+                <Text style={styles.dealerInfor2}>0754323677767</Text>
+              </View>
+              <View style={styles.row}>
+                <Text style={styles.dealerInfor}>Distance:</Text>
+                <Text style={styles.dealerInfor2}>10 m</Text>
+              </View>
+              <View style={styles.row}>
+                <Text style={styles.dealerInfor}>Delivery Charge:</Text>
+                <Text style={styles.dealerInfor2}> LKR. 300</Text>
+              </View>
+            </View>
+
+            <View style={styles.card}>
+              <Text style={styles.dealerName}>DEALER</Text>
+              <Text style={styles.dealerInfor}>Address</Text>
+              <View style={styles.row}>
+                <Text style={styles.dealerInfor}>Tell:</Text>
+                <Text style={styles.dealerInfor2}>0754323677767</Text>
+              </View>
+              <View style={styles.row}>
+                <Text style={styles.dealerInfor}>Distance:</Text>
+                <Text style={styles.dealerInfor2}>10 m</Text>
+              </View>
+              <View style={styles.row}>
+                <Text style={styles.dealerInfor}>Delivery Charge:</Text>
+                <Text style={styles.dealerInfor2}> LKR. 300</Text>
+              </View>
+            </View>
+
+            <View style={styles.card}>
+              <Text style={styles.dealerName}>DEALER</Text>
+              <Text style={styles.dealerInfor}>Address</Text>
+              <View style={styles.row}>
+                <Text style={styles.dealerInfor}>Tell:</Text>
+                <Text style={styles.dealerInfor2}>0754323677767</Text>
+              </View>
+              <View style={styles.row}>
+                <Text style={styles.dealerInfor}>Distance:</Text>
+                <Text style={styles.dealerInfor2}>10 m</Text>
+              </View>
+              <View style={styles.row}>
+                <Text style={styles.dealerInfor}>Delivery Charge:</Text>
+                <Text style={styles.dealerInfor2}> LKR. 300</Text>
+              </View>
+            </View>
+
             <View style={styles.card}>
               <Text style={styles.dealerName}>DEALER</Text>
               <Text style={styles.dealerInfor}>Address</Text>

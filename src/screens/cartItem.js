@@ -16,6 +16,7 @@ import {TouchableOpacity} from 'react-native-gesture-handler';
 const image = require('../assets/img/background.png');
 
 const CartItem = () => {
+
   return (
     <TouchableWithoutFeedback
       onPress={() => {
@@ -38,14 +39,14 @@ const CartItem = () => {
               <TouchableOpacity>
                 <Image
                   style={styles.addImage}
-                  source={require('../assets/img/outline_remove_white_24dp.png')}
+                  source={require('../assets/img/icons/outline_remove_white_24dp.png')}
                 />
               </TouchableOpacity>
               <Text style={styles.itemName}>1 </Text>
               <TouchableOpacity>
                 <Image
                   style={styles.addImage}
-                  source={require('../assets/img/outline_add_white_24dp.png')}
+                  source={require('../assets/img/icons/outline_add_white_24dp.png')}
                 />
               </TouchableOpacity>
             </View>

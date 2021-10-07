@@ -8,10 +8,11 @@ import Top from '../screens/TopBar';
 import HomeDealer from '../screens/homeDealer';
 import SelectDealer from '../screens/selectDealer';
 import CartItem from '../screens/cartItem';
+import OrderDealer from '../screens/orderDealer';
 
 const screens = {
   Home: {
-    screen: CartItem,
+    screen: OrderDealer,
     navigationOptions: {
       headerTitle: () => <Header title="LITRO GAS" />,
     },

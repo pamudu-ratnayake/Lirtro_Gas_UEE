@@ -21,8 +21,8 @@ const HomeDealer = () => {
         Keyboard.dismiss();
       }}>
       <View style={styles.container}>
-        <ImageBackground source={image} style={styles.image} resizeMode="cover">
           <ScrollView>
+        <ImageBackground source={image} style={styles.image} resizeMode="cover">
             <View style={styles.card}>
               <View style={styles.col1}>
                 <Image
@@ -45,8 +45,10 @@ const HomeDealer = () => {
                 />
               </View>
             </View>
-          </ScrollView>
+
+            
         </ImageBackground>
+          </ScrollView>
       </View>
     </TouchableWithoutFeedback>
   );
