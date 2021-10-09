@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
-const Orders = () => {
+const Orders = ({navigation}) => {
   const [pastOrder, setPastOrder] = useState(true);
   const [currentOrder, setCurrentOrder] = useState();
 
@@ -14,6 +14,10 @@ const Orders = () => {
     setCurrentOrder(true);
     setPastOrder(false);
   }
+
+  const pressHandler = () => {
+    navigation.navigate('Payment');
+  };
 
   return (
     <View style={styles.container} >
@@ -47,10 +51,17 @@ const Orders = () => {
             Current Orders.....
           </Text>
         </View>
-
       }
+
        </View>
-  
+  <View>
+  <TouchableOpacity style={styles.button}
+           onPress={pressHandler} >
+          <Text style={styles.buttonLabel} >
+       Go Payment
+          </Text>
+        </TouchableOpacity>
+  </View>
         
     </View>
   );
