@@ -11,6 +11,7 @@ import CartItem from '../screens/cartItem';
 import HomeDealer from '../screens/homeDealer';
 import SelectDealer from '../screens/selectDealer';
 import AddAddress from '../screens/AddAddress';
+import Orders from '../screens/Orders';
 
 const switchNavigator = createSwitchNavigator({
   mainFlow: createMaterialBottomTabNavigator(
@@ -48,9 +49,9 @@ const switchNavigator = createSwitchNavigator({
         },
       ),
       TestBar: {
-        screen: HomeDealer,
+        screen: Orders,
         navigationOptions: {
-          tabBarLabel: 'Dealer',
+          tabBarLabel: 'Orders',
           tabBarColor: '#2553A8',
           tabBarIcon: ({color}) => (
             <Icon name="ios-home" color={color} size={26} />
