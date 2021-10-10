@@ -12,7 +12,7 @@ import {
   ImageBackground,
 } from 'react-native';
 
-const image = require('../assets/img/background.png');
+const image = require('../assets/images/background.png');
 
 const HomeDealer = () => {
   const [TextInputDisableHolder1, setTextInputDisableHolder1] = useState(false);
@@ -66,7 +66,7 @@ const HomeDealer = () => {
               <View style={styles.col1}>
                 <Image
                   style={styles.itemImage}
-                  source={require('../assets/img/litro.jpg')}
+                  source={require('../assets/images/litro.jpg')}
                 />
               </View>
               <View style={styles.col2}>
@@ -93,7 +93,7 @@ const HomeDealer = () => {
               <View style={styles.col1}>
                 <Image
                   style={styles.itemImage}
-                  source={require('../assets/img/litro.jpg')}
+                  source={require('../assets/images/litro.jpg')}
                 />
               </View>
               <View style={styles.col2}>
@@ -120,7 +120,7 @@ const HomeDealer = () => {
               <View style={styles.col1}>
                 <Image
                   style={styles.itemImage}
-                  source={require('../assets/img/litro.jpg')}
+                  source={require('../assets/images/litro.jpg')}
                 />
               </View>
               <View style={styles.col2}>
@@ -147,7 +147,7 @@ const HomeDealer = () => {
               <View style={styles.col1}>
                 <Image
                   style={styles.itemImage}
-                  source={require('../assets/img/litro.jpg')}
+                  source={require('../assets/images/litro.jpg')}
                 />
               </View>
               <View style={styles.col2}>
@@ -174,7 +174,7 @@ const HomeDealer = () => {
               <View style={styles.col1}>
                 <Image
                   style={styles.itemImage}
-                  source={require('../assets/img/litro.jpg')}
+                  source={require('../assets/images/litro.jpg')}
                 />
               </View>
               <View style={styles.col2}>
@@ -201,7 +201,7 @@ const HomeDealer = () => {
               <View style={styles.col1}>
                 <Image
                   style={styles.itemImage}
-                  source={require('../assets/img/litro.jpg')}
+                  source={require('../assets/images/litro.jpg')}
                 />
               </View>
               <View style={styles.col2}>

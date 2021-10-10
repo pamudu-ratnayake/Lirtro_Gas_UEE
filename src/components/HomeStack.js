@@ -1,6 +1,6 @@
 import {createStackNavigator} from 'react-navigation-stack';
 import {createAppContainer, createSwitchNavigator} from 'react-navigation';
-// import {createMaterialBottomTabNavigator} from 'react-navigation-material-bottom-tabs';
+import {createMaterialBottomTabNavigator} from 'react-navigation-material-bottom-tabs';
 import Icon from 'react-native-vector-icons/Ionicons';
 
 import HomeScreen from '../screens/HomeScreen';
@@ -18,7 +18,7 @@ const switchNavigator = createSwitchNavigator({
       Home: createStackNavigator(
         {
           HomeTop: {
-            screen: HomeScreen,
+            screen: HomeDealer,
             navigationOptions: {
               headerTitle: () => <Header title="LITRO GAS" />,
             },

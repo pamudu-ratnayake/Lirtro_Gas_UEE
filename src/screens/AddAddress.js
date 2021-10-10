@@ -14,7 +14,6 @@ import {
 
 const AddAddress = () => {
 
-
     return(
 
         <ScrollView>

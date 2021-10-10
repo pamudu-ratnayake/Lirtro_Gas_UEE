@@ -25,7 +25,7 @@ const HomeScreen = ({navigation}) => {
         <View>
           <Image
             style={styles.images}
-            source={require('./assets/images/gas.png')}
+            source={require('../assets/images/gas.png')}
           />
         </View>
         <View>
