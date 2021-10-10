@@ -71,10 +71,10 @@ const MyCart = () => {
               </View>
 
               <View style={styles.btn}>
-                <Image
+                {/* <Image
                   style={styles.btnImage}
                   source={require('../assets/images/plus.png')}
-                />
+                /> */}
                 <TouchableOpacity>
                   <Text style={styles.btnText}>Add More Product</Text>
                 </TouchableOpacity>

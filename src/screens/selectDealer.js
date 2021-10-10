@@ -12,7 +12,7 @@ import {
 } from 'react-native';
 import {Picker} from '@react-native-picker/picker';
 
-const image = require('../assets/img/background.png');
+const image = require('../assets/images/background.png');
 
 const SelectDealer = () => {
   const [selectedLanguage, setSelectedLanguage] = useState();
@@ -27,7 +27,7 @@ const SelectDealer = () => {
           <View style={styles.filterArea}>
             <View style={styles.filterIcon}>
               <Image
-                source={require('../assets/img/icons/icons8-filter-24.png')}
+                source={require('../assets/images/icons/icons8-filter-24.png')}
               />
             </View>
             <View style={styles.filter}>

@@ -10,7 +10,7 @@ import {
   TouchableOpacity,
 } from 'react-native';
 
-const image = require('../assets/img/background.png');
+const image = require('../assets/images/background.png');
 
 const OrderDealer = ({navigation}) => {
   const toAcceptedOrd = () => {
@@ -42,7 +42,7 @@ const OrderDealer = ({navigation}) => {
               <Text style={styles.cardText}>Accepted Orders</Text>
               <Image
                 style={styles.iconImage}
-                source={require('../assets/img/icons/outline_arrow_forward_ios_white_24dp.png')}
+                source={require('../assets/images/icons/outline_arrow_forward_ios_white_24dp.png')}
               />
             </TouchableOpacity>
 
@@ -50,7 +50,7 @@ const OrderDealer = ({navigation}) => {
               <Text style={styles.cardText}>Pending Orders</Text>
               <Image
                 style={styles.iconImage}
-                source={require('../assets/img/icons/outline_arrow_forward_ios_white_24dp.png')}
+                source={require('../assets/images/icons/outline_arrow_forward_ios_white_24dp.png')}
               />
             </TouchableOpacity>
 
@@ -58,7 +58,7 @@ const OrderDealer = ({navigation}) => {
               <Text style={styles.cardText}>Dispatched Orders</Text>
               <Image
                 style={styles.iconImage}
-                source={require('../assets/img/icons/outline_arrow_forward_ios_white_24dp.png')}
+                source={require('../assets/images/icons/outline_arrow_forward_ios_white_24dp.png')}
               />
             </TouchableOpacity>
 
@@ -66,7 +66,7 @@ const OrderDealer = ({navigation}) => {
               <Text style={styles.cardText}>Delivered Orders</Text>
               <Image
                 style={styles.iconImage}
-                source={require('../assets/img/icons/outline_arrow_forward_ios_white_24dp.png')}
+                source={require('../assets/images/icons/outline_arrow_forward_ios_white_24dp.png')}
               />
             </TouchableOpacity>
           </View>
