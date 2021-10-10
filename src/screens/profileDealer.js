@@ -33,7 +33,7 @@ const ProfileDealer = () => {
           <View style={styles.pageView}>
             <Image
               style={styles.profImage}
-              source={require('../assets/img/dealerProfile.jpg')}
+              source={require('../assets/images/dealerProfile.jpg')}
             />
 
             <View style={styles.dealerInfor}>

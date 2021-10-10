@@ -10,7 +10,7 @@ import {
   ImageBackground,
 } from 'react-native';
 
-const image = require('../assets/img/background.png');
+const image = require('../assets/images/background.png');
 
 const DispatchedOrders = () => {
 

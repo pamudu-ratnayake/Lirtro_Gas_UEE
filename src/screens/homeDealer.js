@@ -84,7 +84,7 @@ const HomeDealer = () => {
                   onPress={onPressButton1}
                   title="Update Stock"
                   style={styles.cardbtn}
-                  borderRadius="10"
+                  borderRadius="10"              
                 />
               </View>
             </View>
@@ -111,7 +111,7 @@ const HomeDealer = () => {
                 onPress={onPressButton2}
                   title="Update Stock"
                   style={styles.cardbtn}
-                  borderRadius="10"
+                  borderRadius="10"      
                 />
               </View>
             </View>
