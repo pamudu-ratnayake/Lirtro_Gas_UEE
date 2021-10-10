@@ -9,15 +9,24 @@ import {
   Keyboard,
   TouchableOpacity,
 } from 'react-native';
-import {useHistory} from 'react-router-dom';
 
 const image = require('../assets/img/background.png');
 
-const OrderDealer = () => {
-  // let history = useHistory();
+const OrderDealer = ({navigation}) => {
+  const toAcceptedOrd = () => {
+    navigation.navigate('Accepted');
+  };
 
-  const toRecieveOrd = () => {
-    // history.push('/recievedOrder');
+  const toPendingOrd = () => {
+    navigation.navigate('PendingOrders');
+  };
+
+  const toDispatchedOrd = () => {
+    navigation.navigate('DispatchedOrders');
+  };
+
+  const toDeliveredOrd = () => {
+    navigation.navigate('DeliveredOrders');
   };
 
   return (
@@ -29,15 +38,15 @@ const OrderDealer = () => {
         {/* <ImageBackground source={image} style={styles.image} resizeMode="cover"> */}
         <ScrollView>
           <View style={styles.cardView}>
-            <TouchableOpacity style={styles.card} onPress={toRecieveOrd}>
-              <Text style={styles.cardText}>Recieved Orders</Text>
+            <TouchableOpacity style={styles.card} onPress={toAcceptedOrd}>
+              <Text style={styles.cardText}>Accepted Orders</Text>
               <Image
                 style={styles.iconImage}
                 source={require('../assets/img/icons/outline_arrow_forward_ios_white_24dp.png')}
               />
             </TouchableOpacity>
 
-            <TouchableOpacity style={styles.card}>
+            <TouchableOpacity style={styles.card} onPress={toPendingOrd}>
               <Text style={styles.cardText}>Pending Orders</Text>
               <Image
                 style={styles.iconImage}
@@ -45,7 +54,7 @@ const OrderDealer = () => {
               />
             </TouchableOpacity>
 
-            <TouchableOpacity style={styles.card}>
+            <TouchableOpacity style={styles.card} onPress={toDispatchedOrd}>
               <Text style={styles.cardText}>Dispatched Orders</Text>
               <Image
                 style={styles.iconImage}
@@ -53,7 +62,7 @@ const OrderDealer = () => {
               />
             </TouchableOpacity>
 
-            <TouchableOpacity style={styles.card}>
+            <TouchableOpacity style={styles.card} onPress={toDeliveredOrd}>
               <Text style={styles.cardText}>Delivered Orders</Text>
               <Image
                 style={styles.iconImage}

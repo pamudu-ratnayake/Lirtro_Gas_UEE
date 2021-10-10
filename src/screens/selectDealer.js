@@ -9,13 +9,13 @@ import {
   TouchableOpacity,
   Keyboard,
   ImageBackground,
-  Picker,
 } from 'react-native';
+import {Picker} from '@react-native-picker/picker';
 
 const image = require('../assets/img/background.png');
 
 const SelectDealer = () => {
-  const [filter, setFilter] = useState('1-2 km');
+  const [selectedLanguage, setSelectedLanguage] = useState();
 
   return (
     <TouchableWithoutFeedback
@@ -30,20 +30,16 @@ const SelectDealer = () => {
                 source={require('../assets/img/icons/icons8-filter-24.png')}
               />
             </View>
-            {/* <Text style={styles.filterTxt}>Filter By</Text> */}
             <View style={styles.filter}>
               <Picker
-                mode="dropdown"
-                itemStyle={styles.pickerItem}
-                style={styles.Picker}
-                selectedValue={filter}
+                selectedValue={selectedLanguage}
                 onValueChange={(itemValue, itemIndex) =>
-                  setFilter({filter: itemValue})
+                  setSelectedLanguage(itemValue)
                 }>
-                <Picker.Item lable="1-2km" value="1-2km" />
-                <Picker.Item lable="1-3km" value="1-3km" />
-                <Picker.Item lable="1-4km" value="1-4km" />
-                <Picker.Item lable="1-5km" value="1-5km" />
+                <Picker.Item label="1km - 3km" value="1km - 3km" />
+                <Picker.Item label="3km - 5km" value="3km - 5km" />
+                <Picker.Item label="5km - 7km" value="5km - 7km" />
+                <Picker.Item label="7km - 10km" value="7km - 10km" />
               </Picker>
             </View>
           </View>
@@ -143,27 +139,19 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     flexDirection: 'row',
     justifyContent: 'flex-start',
-    padding: 8,
+    height: 55,
+    width: 410,
     borderRadius: 1,
-    marginTop: 15,
-    marginHorizontal: 6,
+    // marginHorizontal: 6,
   },
   filterIcon: {
     flex: 1,
     paddingTop: 3,
+    marginVertical: 12,
+    marginLeft: 10
   },
   filter: {
     flex: 8,
-    // paddingRight: 1,
-    fontSize: 15,
-    color: 'red',
-    backgroundColor: '#F5F5F5',
-    height: 30,
-  },
-  Picker: {
-    flex: 1,
-    height: 60,
-    width: 350,
   },
   pickerItem: {
     color: '#333333',

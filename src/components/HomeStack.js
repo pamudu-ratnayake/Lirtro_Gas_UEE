@@ -11,13 +11,13 @@ import CartItem from '../screens/cartItem';
 import OrderDealer from '../screens/orderDealer';
 import ProfileDealer from '../screens/profileDealer';
 import PendingOrders from '../screens/pendingOrders';
-import RecievedOrders from '../screens/recievedOrders';
+import AcceptedOrders from '../screens/acceptedOrder';
 import DispatchedOrders from '../screens/dispatchedOrders';
 import DeliveredOrders from '../screens/deliveredOrders';
 
 const screens = {
   Home: {
-    screen: OrderDealer,
+    screen: HomeDealer,
     navigationOptions: {
       headerTitle: () => <Header title="LITRO GAS" />,
     },
