@@ -14,7 +14,16 @@ import {
 
 // const image = require('../assets/images/background.png');
 
-const HomeDealer = () => {
+const HomeDealer = ({navigation}) => {
+
+  const press1 = () => {
+    navigation.navigate('OrderDealer');
+  }
+
+  const press2 = () => {
+    navigation.navigate('ProfileDealer');
+  }
+
   return (
     <TouchableWithoutFeedback
       onPress={() => {
@@ -42,6 +51,7 @@ const HomeDealer = () => {
                   title="Update Stock"
                   style={styles.cardbtn}
                   borderRadius="10"
+                  onPress={press1}
                 />
               </View>
             </View>
@@ -65,6 +75,7 @@ const HomeDealer = () => {
                   title="Update Stock"
                   style={styles.cardbtn}
                   borderRadius="10"
+                  onPress={press2}
                 />
               </View>
             </View>
