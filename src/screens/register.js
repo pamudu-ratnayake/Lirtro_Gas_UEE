@@ -46,6 +46,16 @@ const Register = ({navigation}) => {
         </View>
         <Button title="Register"></Button>
     </View>
+    <View style={styles.bottomgrp}>
+      <Text>Already have an account?</Text>
+      <TouchableOpacity style={styles.bottomgrp}>
+      <View style={styles.regbtn}>
+        <Text style={styles.regBtnText}>
+          Login Now
+        </Text>
+      </View>
+    </TouchableOpacity>
+    </View>
     </ScrollView>
 
   );
@@ -70,6 +80,26 @@ const styles = StyleSheet.create({
   },
   firstRow: {
       flexDirection:'row'
+  },
+  bottomgrp: {
+    margin:30,
+    alignItems:'center'
+  },
+  regbtn: {
+    backgroundColor:'#009DFE',
+    width:350,
+    height:35,
+    borderRadius:4,
+    alignItems:'center',
+    justifyContent:'center',
+    borderWidth:2,
+    backgroundColor:null,
+    borderColor:'#009DFE'
+  },
+  regBtnText: {
+    fontWeight:'bold',
+    fontSize:16,
+    color:'white'
   }
 });
 
