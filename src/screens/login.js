@@ -1,33 +1,66 @@
-import React from 'react';
-import {View, Text, StyleSheet, Button} from 'react-native';
+import React, {useState} from 'react';
+import {
+  View,
+  Image,
+  Text,
+  Card,
+  StyleSheet,
+  Button,
+  ScrollView,
+  TextInput,
+  TouchableOpacity,
+} from 'react-native';
+import {Picker} from '@react-native-picker/picker';
 
 const Login = ({navigation}) => {
-  const pressHandler = () => {
-    navigation.navigate('Test2');
-  };
 
   return (
-    <View style={styles.welcomeview}>
-      <Text style={styles.welcometxt}>Welcome Back</Text>
-      <Button title="go to login" onPress={pressHandler} />
+
+    <ScrollView>
+    <View style={styles.inputGroup}>
+    <View >
+          <Text style={styles.lableOnInput}>Email :</Text>
+          <TextInput style={styles.inputfld}></TextInput>
+        </View>
+        <View >
+          <Text style={styles.lableOnInput}>Password :</Text>
+          <TextInput style={styles.inputfld}></TextInput>
+        </View>
+        <Button title="Login"></Button>
     </View>
-    // <Container>
-    //   <Text>Welcome to login</Text>
-    // </Container>
+    <View style={styles.bottomgrp}>
+      <Text>Don't have an account?</Text>
+      <View style={{width:350}}>
+      <Button title="Register Now" />
+      </View>
+    </View>
+    </ScrollView>
+
   );
 };
 
 
 const styles = StyleSheet.create({
-  welcometxt: {
-    backgroundColor: 'red',
+  inputGroup: {
+    margin: 10,
+    marginTop: 8,
   },
-  welcomeview: {
-    // backgroundColor: "#2553A8",
-    // width: 412,
-    // height: 59,
-    marginTop: 10,
+  inputfld: {
+    backgroundColor: '#FFFFFF',
+    margin: 8,
+    borderRadius: 8,
+    height: 40,
+    paddingLeft: 10,
   },
+  lableOnInput: {
+    // marginTop: 12,
+    marginLeft: 10,
+    fontSize: 16,
+  },
+  bottomgrp: {
+    margin:30,
+    alignItems:'center'
+  }
 });
 
 export default Login;
