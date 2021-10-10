@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import PastOrder from './PastOrder';
+import Review from "./Review";
 
 const Orders = ({navigation}) => {
   const [pastOrder, setPastOrder] = useState(true);
@@ -39,10 +41,8 @@ const Orders = ({navigation}) => {
       <View style={{margin:10}} > 
       { pastOrder && 
        <View style={styles.row} >
-          <Text >
-            Past Orders.....
-          </Text>
-        </View>
+        <PastOrder/>
+       </View>
       }
       {
         currentOrder && 
@@ -62,7 +62,11 @@ const Orders = ({navigation}) => {
           </Text>
         </TouchableOpacity>
   </View>
-        
+      <View style={styles.reviewBtn}>
+        <Review  />
+      </View>
+  
+  
     </View>
   );
 };
@@ -113,6 +117,12 @@ const styles = StyleSheet.create({
     textAlign: "center",
     marginBottom: 10,
     fontSize: 24,
+  },
+  reviewBtn:{
+    position: 'absolute',
+    bottom:0,
+    left:0,
+    margin:10,
   },
 });
 
