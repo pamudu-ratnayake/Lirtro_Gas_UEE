@@ -13,22 +13,23 @@ import {
 } from 'react-native';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 
-// const image = require('../assets/images/background.png');
+const image = require('../assets/img/background.png');
 
 const CartItem = () => {
+
   return (
     <TouchableWithoutFeedback
       onPress={() => {
         Keyboard.dismiss();
       }}>
       <View style={styles.container}>
-        {/* <ImageBackground source={image} style={styles.image} resizeMode="cover"> */}
+        <ImageBackground source={image} style={styles.image} resizeMode="cover">
         <ScrollView>
           <View style={styles.card}>
             <View style={styles.itemDetails}>
               <Image
                 style={styles.itemImage}
-                source={require('../assets/images/litro.jpg')}
+                source={require('../assets/img/litro.jpg')}
               />
               <Text style={styles.itemName}>2.3kg Litro Regular Refill</Text>
               <Text style={styles.itemName}>LKR 1250.00</Text>
@@ -38,14 +39,14 @@ const CartItem = () => {
               <TouchableOpacity>
                 <Image
                   style={styles.addImage}
-                  source={require('../assets/images/outline_remove_white_24dp.png')}
+                  source={require('../assets/img/icons/outline_remove_white_24dp.png')}
                 />
               </TouchableOpacity>
               <Text style={styles.itemName}>1 </Text>
               <TouchableOpacity>
                 <Image
                   style={styles.addImage}
-                  source={require('../assets/images/outline_add_white_24dp.png')}
+                  source={require('../assets/img/icons/outline_add_white_24dp.png')}
                 />
               </TouchableOpacity>
             </View>
@@ -60,7 +61,7 @@ const CartItem = () => {
             </View>
           </View>
         </ScrollView>
-        {/* </ImageBackground> */}
+        </ImageBackground>
       </View>
     </TouchableWithoutFeedback>
   );
@@ -71,6 +72,10 @@ const styles = StyleSheet.create({
     flex: 1,
     // padding: 20,
     // backgroundColor: '#ddd',
+  },
+  image: {
+    flex: 1,
+    justifyContent: 'center',
   },
   card: {
     flex: 1,
