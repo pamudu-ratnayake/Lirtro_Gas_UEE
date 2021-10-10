@@ -31,13 +31,13 @@ const MyProfile = ({navigation}) => {
   return (
     <ScrollView>
       {/* <TouchableOpacity> */}
-      <View style={{marginRight:120}}>
+      <View >
       <ImageBackground
         style={styles.arrowIcon}
         source={require('../assets/images/down-arrow.png')}>
       <Picker
         mode={'dropdown'}
-        style={{marginTop: -11}}
+        style={{marginTop: -12}}
         
         selectedValue={selectedValue}
         onValueChange={(itemValue, itemIndex) => setSelectedValue(itemValue)}>

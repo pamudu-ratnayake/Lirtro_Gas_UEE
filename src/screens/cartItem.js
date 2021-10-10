@@ -13,16 +13,23 @@ import {
 } from 'react-native';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 
-// const image = require('../assets/images/background.png');
+const image = require('../assets/images/background.png');
 
-const CartItem = () => {
+
+
+const CartItem = ({navigation}) => {
+
+  const mycart = () => {
+    navigation.navigate('MyCart')
+  }
+
   return (
     <TouchableWithoutFeedback
       onPress={() => {
         Keyboard.dismiss();
       }}>
       <View style={styles.container}>
-        {/* <ImageBackground source={image} style={styles.image} resizeMode="cover"> */}
+        <ImageBackground source={image} style={styles.image} resizeMode="cover">
         <ScrollView>
           <View style={styles.card}>
             <View style={styles.itemDetails}>
@@ -38,14 +45,14 @@ const CartItem = () => {
               <TouchableOpacity>
                 <Image
                   style={styles.addImage}
-                  source={require('../assets/images/outline_remove_white_24dp.png')}
+                  source={require('../assets/images/icons/outline_remove_white_24dp.png')}
                 />
               </TouchableOpacity>
               <Text style={styles.itemName}>1 </Text>
               <TouchableOpacity>
                 <Image
                   style={styles.addImage}
-                  source={require('../assets/images/outline_add_white_24dp.png')}
+                  source={require('../assets/images/icons/outline_add_white_24dp.png')}
                 />
               </TouchableOpacity>
             </View>
@@ -54,13 +61,13 @@ const CartItem = () => {
               <Text style={styles.totText}>LKR 1250.00 </Text>
             </View>
             <View style={styles.btn}>
-              <TouchableOpacity>
+              <TouchableOpacity onPress={mycart}>
                 <Text style={styles.btnText}>Add to Cart</Text>
               </TouchableOpacity>
             </View>
           </View>
         </ScrollView>
-        {/* </ImageBackground> */}
+        </ImageBackground>
       </View>
     </TouchableWithoutFeedback>
   );
@@ -71,6 +78,10 @@ const styles = StyleSheet.create({
     flex: 1,
     // padding: 20,
     // backgroundColor: '#ddd',
+  },
+  image: {
+    flex: 1,
+    justifyContent: 'center',
   },
   card: {
     flex: 1,

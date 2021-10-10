@@ -16,8 +16,9 @@ import {Picker} from '@react-native-picker/picker';
 import { PickerItem } from 'react-native/Libraries/Components/Picker/Picker';
 
 const HomeScreen = ({navigation}) => {
+  
   const pressHandler = () => {
-    navigation.navigate('Test2');
+    navigation.navigate('Product');
   };
 
   const addAddress = () => {
