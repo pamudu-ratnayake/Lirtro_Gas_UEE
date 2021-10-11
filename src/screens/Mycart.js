@@ -15,7 +15,7 @@ import {TouchableOpacity} from 'react-native-gesture-handler';
 import {Icon} from 'react-native-elements';
 import {Picker} from '@react-native-picker/picker';
 
-// const image = require('../assets/img/background.png');
+const image = require('../assets/images/background.png');
 
 const MyCart = () => {
   const [selectedValue, setSelectedValue] = useState('');
@@ -26,7 +26,7 @@ const MyCart = () => {
         Keyboard.dismiss();
       }}>
       <View style={styles.container}>
-        {/* <ImageBackground source={image} style={styles.image} resizeMode="cover"> */}
+        <ImageBackground source={image} style={styles.image1} resizeMode="cover">
         <ScrollView>
           <View style={styles.IconView}>
             <Icon
@@ -169,7 +169,7 @@ const MyCart = () => {
             </View>
           </View>
         </ScrollView>
-        {/* </ImageBackground> */}
+        </ImageBackground>
       </View>
     </TouchableWithoutFeedback>
   );
@@ -213,6 +213,9 @@ const styles = StyleSheet.create({
     height: 100,
     width: 70,
     marginRight: 10,
+  },
+  image1: {
+    flex: 1
   },
   card: {
     justifyContent: 'space-between',

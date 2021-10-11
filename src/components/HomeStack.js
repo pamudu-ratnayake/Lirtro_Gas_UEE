@@ -24,6 +24,7 @@ import PendingOrders from '../screens/pendingOrders';
 import Summery from '../screens/Summery';
 import Login from '../screens/login';
 import Register from '../screens/register';
+import ProfEditDealer from '../screens/profEditDealer';
 
 const switchNavigator = createSwitchNavigator({
   mainFlow: createMaterialBottomTabNavigator(
@@ -31,7 +32,7 @@ const switchNavigator = createSwitchNavigator({
       Home: createStackNavigator(
         {
           HomeTop: {
-            screen: HomeScreen,
+            screen: CartItem,
             navigationOptions: {
               headerTitle: () => <Header title="LITRO GAS" />,
             },

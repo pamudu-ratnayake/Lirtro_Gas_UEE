@@ -14,7 +14,7 @@ import {
 } from 'react-native';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 
-// const image = require('../assets/img/background.png');
+const image = require('../assets/images/background.png');
 
 const Summery = () => {
   return (
@@ -23,7 +23,7 @@ const Summery = () => {
         Keyboard.dismiss();
       }}>
       <View style={styles.container}>
-        {/* <ImageBackground source={image} style={styles.image} resizeMode="cover"> */}
+        <ImageBackground source={image} style={styles.image1} resizeMode="cover">
         <ScrollView>
           <View>
             <View style={styles.card}>
@@ -82,7 +82,7 @@ const Summery = () => {
                         </View>
           </View>
         </ScrollView>
-        {/* </ImageBackground> */}
+        </ImageBackground>
       </View>
     </TouchableWithoutFeedback>
   );
@@ -98,6 +98,9 @@ const styles = StyleSheet.create({
     height: 70,
     width: 50,
     marginRight: 15,
+  },
+  image1: {
+    flex: 1
   },
   card: {
     justifyContent: 'space-between',

@@ -46,76 +46,76 @@ const SelectDealer = () => {
           <ScrollView>
             <TouchableOpacity>
               <View style={styles.card}>
-                <Text style={styles.dealerName}>DEALER</Text>
-                <Text style={styles.dealerInfor}>Address</Text>
+                <Text style={styles.dealerName}>A M L Perera</Text>
+                <Text style={styles.dealerInfor}>Colombo 07</Text>
                 <View style={styles.row}>
                   <Text style={styles.dealerInfor}>Tell:</Text>
                   <Text style={styles.dealerInfor2}>0754323677767</Text>
                 </View>
                 <View style={styles.row}>
                   <Text style={styles.dealerInfor}>Distance:</Text>
-                  <Text style={styles.dealerInfor2}>10 m</Text>
+                  <Text style={styles.dealerInfor2}>3500 m</Text>
                 </View>
                 <View style={styles.row}>
                   <Text style={styles.dealerInfor}>Delivery Charge:</Text>
-                  <Text style={styles.dealerInfor2}> LKR. 300</Text>
+                  <Text style={styles.dealerInfor2}> LKR. 350</Text>
                 </View>
               </View>
             </TouchableOpacity>
 
             <TouchableOpacity>
               <View style={styles.card}>
-                <Text style={styles.dealerName}>DEALER</Text>
-                <Text style={styles.dealerInfor}>Address</Text>
+                <Text style={styles.dealerName}>P R G H H Bandara</Text>
+                <Text style={styles.dealerInfor}>Colombo 10</Text>
                 <View style={styles.row}>
                   <Text style={styles.dealerInfor}>Tell:</Text>
                   <Text style={styles.dealerInfor2}>0754323677767</Text>
                 </View>
                 <View style={styles.row}>
                   <Text style={styles.dealerInfor}>Distance:</Text>
-                  <Text style={styles.dealerInfor2}>10 m</Text>
+                  <Text style={styles.dealerInfor2}>3800 m</Text>
                 </View>
                 <View style={styles.row}>
                   <Text style={styles.dealerInfor}>Delivery Charge:</Text>
-                  <Text style={styles.dealerInfor2}> LKR. 300</Text>
+                  <Text style={styles.dealerInfor2}> LKR. 380</Text>
                 </View>
               </View>
             </TouchableOpacity>
 
             <TouchableOpacity>
               <View style={styles.card}>
-                <Text style={styles.dealerName}>DEALER</Text>
-                <Text style={styles.dealerInfor}>Address</Text>
+                <Text style={styles.dealerName}>P M Ratnayake</Text>
+                <Text style={styles.dealerInfor}>Colombo 04</Text>
                 <View style={styles.row}>
                   <Text style={styles.dealerInfor}>Tell:</Text>
                   <Text style={styles.dealerInfor2}>0754323677767</Text>
                 </View>
                 <View style={styles.row}>
                   <Text style={styles.dealerInfor}>Distance:</Text>
-                  <Text style={styles.dealerInfor2}>10 m</Text>
+                  <Text style={styles.dealerInfor2}>4000 m</Text>
                 </View>
                 <View style={styles.row}>
                   <Text style={styles.dealerInfor}>Delivery Charge:</Text>
-                  <Text style={styles.dealerInfor2}> LKR. 300</Text>
+                  <Text style={styles.dealerInfor2}> LKR. 400</Text>
                 </View>
               </View>
             </TouchableOpacity>
 
             <TouchableOpacity>
               <View style={styles.card}>
-                <Text style={styles.dealerName}>DEALER</Text>
-                <Text style={styles.dealerInfor}>Address</Text>
+                <Text style={styles.dealerName}>J N H Fernando</Text>
+                <Text style={styles.dealerInfor}>Colombo 10</Text>
                 <View style={styles.row}>
                   <Text style={styles.dealerInfor}>Tell:</Text>
                   <Text style={styles.dealerInfor2}>0754323677767</Text>
                 </View>
                 <View style={styles.row}>
                   <Text style={styles.dealerInfor}>Distance:</Text>
-                  <Text style={styles.dealerInfor2}>10 m</Text>
+                  <Text style={styles.dealerInfor2}>4300 m</Text>
                 </View>
                 <View style={styles.row}>
                   <Text style={styles.dealerInfor}>Delivery Charge:</Text>
-                  <Text style={styles.dealerInfor2}> LKR. 300</Text>
+                  <Text style={styles.dealerInfor2}> LKR. 430</Text>
                 </View>
               </View>
             </TouchableOpacity>

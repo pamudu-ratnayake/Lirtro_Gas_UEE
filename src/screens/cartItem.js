@@ -16,13 +16,7 @@ import {TouchableOpacity} from 'react-native-gesture-handler';
 
 const image = require('../assets/images/background.png');
 
-
-
-const CartItem = ({navigation}) => {
-
-  const mycart = () => {
-    navigation.navigate('MyCart')
-  }
+const CartItem = () => {
   // const{
   //   Items,
   //   totalItems,
@@ -131,7 +125,7 @@ const CartItem = ({navigation}) => {
         Keyboard.dismiss();
       }}>
       <View style={styles.container}>
-        <ImageBackground source={image} style={styles.image} resizeMode="cover">
+        <ImageBackground source={image} style={styles.image1} resizeMode="cover">
         <ScrollView>
           <View style={styles.card}>
             <View style={styles.itemDetails}>
@@ -153,7 +147,7 @@ const CartItem = ({navigation}) => {
                 }}>
                 <Image
                   style={styles.addImage}
-                  source={require('../assets/images/icons/outline_remove_white_24dp.png')}
+                  source={require('../assets/images/outline_remove_white_24dp.png')}
                 />
               </TouchableOpacity>
               <TextInput keyboardType="numeric" style={styles.itemName}>
@@ -166,7 +160,7 @@ const CartItem = ({navigation}) => {
                 }}>
                 <Image
                   style={styles.addImage}
-                  source={require('../assets/images/icons/outline_add_white_24dp.png')}
+                  source={require('../assets/images/outline_add_white_24dp.png')}
                 />
               </TouchableOpacity>
             </View>
@@ -197,9 +191,8 @@ const styles = StyleSheet.create({
     // padding: 20,
     // backgroundColor: '#ddd',
   },
-  image: {
-    flex: 1,
-    justifyContent: 'center',
+  image1: {
+    flex: 1
   },
   card: {
     flex: 1,

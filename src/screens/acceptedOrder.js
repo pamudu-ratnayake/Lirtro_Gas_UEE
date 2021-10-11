@@ -10,7 +10,7 @@ import {
   ImageBackground,
 } from 'react-native';
 
-const image = require('../assets/img/background.png');
+const image = require('../assets/images/background.png');
 
 const AcceptedOrders = () => {
 
@@ -20,7 +20,7 @@ const AcceptedOrders = () => {
         Keyboard.dismiss();
       }}>
       <View style={styles.container}>
-        {/* <ImageBackground source={image} style={styles.image} resizeMode="cover"> */}
+        <ImageBackground source={image} style={styles.image} resizeMode="cover">
           <ScrollView>
             <View style={styles.card}>
               <Text style={styles.orderInfor1}>OR005</Text>
@@ -32,7 +32,7 @@ const AcceptedOrders = () => {
               </View>
               <View style={styles.row}>
                 <Text style={styles.orderInfor1}>Distance</Text>
-                <Text style={styles.orderInfor2}>: 10 m</Text>
+                <Text style={styles.orderInfor2}>: 3000 m</Text>
               </View>
               <View style={styles.row}>
                 <Text style={styles.orderInfor1}>Delivery Charge</Text>
@@ -46,16 +46,16 @@ const AcceptedOrders = () => {
               <View style={styles.row3}>
                 <Text style={styles.itemBody1}>Hose</Text>
                 <Text style={styles.itemBody2}>1</Text>
-                <Text style={styles.itemBody3}>780.00</Text>
+                <Text style={styles.itemBody3}>470.00</Text>
               </View>
               <View style={styles.row3}>
-                <Text style={styles.itemBody1}>Cylinder</Text>
+                <Text style={styles.itemBody1}>5kg Litro Budget Refill</Text>
                 <Text style={styles.itemBody2}>2</Text>
-                <Text style={styles.itemBody3}>2580.00</Text>
+                <Text style={styles.itemBody3}>2152.00</Text>
               </View>
               <View style={styles.row}>
                 <Text style={styles.totPriceTxt}>Total</Text>
-                <Text style={styles.totPrice}>: LKR.3790.00</Text>
+                <Text style={styles.totPrice}>: LKR.2922.00</Text>
               </View>
               <TouchableOpacity style={styles.btn}>
                 <Text style={styles.btnText}>To Distpatched</Text>
@@ -72,11 +72,11 @@ const AcceptedOrders = () => {
               </View>
               <View style={styles.row}>
                 <Text style={styles.orderInfor1}>Distance</Text>
-                <Text style={styles.orderInfor2}>: 10 m</Text>
+                <Text style={styles.orderInfor2}>: 3500 m</Text>
               </View>
               <View style={styles.row}>
                 <Text style={styles.orderInfor1}>Delivery Charge</Text>
-                <Text style={styles.orderInfor2}>: LKR. 300</Text>
+                <Text style={styles.orderInfor2}>: LKR. 350</Text>
               </View>
               <View style={styles.row2}>
                 <Text style={styles.itemHeader1}>Item</Text>
@@ -84,14 +84,14 @@ const AcceptedOrders = () => {
                 <Text style={styles.itemHeader3}>Price</Text>
               </View>
               <View style={styles.row3}>
-                <Text style={styles.itemBody1}>Hose</Text>
+                <Text style={styles.itemBody1}>Regulator</Text>
                 <Text style={styles.itemBody2}>1</Text>
-                <Text style={styles.itemBody3}>780.00</Text>
+                <Text style={styles.itemBody3}>880.00</Text>
               </View>
               <View style={styles.row3}>
-                <Text style={styles.itemBody1}>Cylinder</Text>
-                <Text style={styles.itemBody2}>2</Text>
-                <Text style={styles.itemBody3}>2580.00</Text>
+                <Text style={styles.itemBody1}>12.5kg Litro Regular Refill</Text>
+                <Text style={styles.itemBody2}>1</Text>
+                <Text style={styles.itemBody3}>3914.00</Text>
               </View>
               <View style={styles.row}>
                 <Text style={styles.totPriceTxt}>Total</Text>
@@ -222,7 +222,7 @@ const AcceptedOrders = () => {
               </TouchableOpacity>
             </View>
           </ScrollView>
-        {/* </ImageBackground> */}
+        </ImageBackground>
       </View>
     </TouchableWithoutFeedback>
   );
