@@ -19,6 +19,10 @@ const Login = ({navigation}) => {
     navigation.navigate('Register')
   }
 
+  const hoemPage = () => {
+    navigation.navigate('Home')
+  }
+
   return (
 
     <View style={styles.container}>
@@ -36,7 +40,7 @@ const Login = ({navigation}) => {
           <TextInput style={styles.inputfld}></TextInput>
         </View>
         <View style={{marginHorizontal:20, marginTop:30}}>
-        <Button title="Login"></Button>
+        <Button title="Login" onPress={hoemPage}></Button>
         </View>
     </View>
     <View style={styles.bottomgrp}>
@@ -45,6 +49,23 @@ const Login = ({navigation}) => {
       <View style={styles.regbtn}>
         <Text style={styles.regBtnText}>
           Register Now
+        </Text>
+      </View>
+    </TouchableOpacity>
+    </View>
+
+    <View style={styles.hrLineGrp}>
+                <View style={styles.hrLine} />
+                <Text style={styles.orTxt}>or</Text>
+                <View style={styles.hrLine} />
+              </View>
+
+    <View style={styles.dealerGrp}>
+      <Text style={{color:'#FFFFFF'}}>To Login As A Dealer</Text>
+      <TouchableOpacity style={{marginTop:10}} onPress={register}>
+      <View style={styles.regbtn}>
+        <Text style={styles.regBtnText}>
+          Login Here
         </Text>
       </View>
     </TouchableOpacity>
@@ -102,7 +123,26 @@ const styles = StyleSheet.create({
     width:100,
     height:100,
     marginTop:30
-  }
+  },
+  hrLine: {
+    borderWidth: 0.6,
+    margin: 20,
+    width: 150,
+    borderColor:'#FFFFFF',
+    marginLeft:25
+  },
+  hrLineGrp: {
+    flexDirection: 'row',
+  },
+  orTxt: {
+    marginTop: 10,
+    color:'#FFFFFF'
+  },
+  dealerGrp: {
+    margin:30,
+    alignItems:'center',
+    marginTop:30
+  },
 });
 
 export default Login;

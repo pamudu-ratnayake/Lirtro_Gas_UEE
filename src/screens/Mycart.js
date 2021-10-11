@@ -17,14 +17,23 @@ import {Picker} from '@react-native-picker/picker';
 
 // const image = require('../assets/img/background.png');
 
-const MyCart = () => {
+const MyCart = ({navigation}) => {
+
+  const moreProduct = () => {
+    navigation.navigate('HomeTop')
+  }
+
+  const pay = () => {
+    navigation.navigate('Payment')
+  }
+
   const [selectedValue, setSelectedValue] = useState('');
   const cartCount = 2;
   return (
-    <TouchableWithoutFeedback
-      onPress={() => {
-        Keyboard.dismiss();
-      }}>
+    // <TouchableWithoutFeedback
+    //   onPress={() => {
+    //     Keyboard.dismiss();
+    //   }}>
       <View style={styles.container}>
         {/* <ImageBackground source={image} style={styles.image} resizeMode="cover"> */}
         <ScrollView>
@@ -131,7 +140,7 @@ const MyCart = () => {
                   style={styles.btnImage}
                   source={require('../assets/images/icons/plus.png')}
                 /> */}
-                <TouchableOpacity>
+                <TouchableOpacity onPress={moreProduct}>
                   <Text style={styles.btnText}>Add More Product</Text>
                 </TouchableOpacity>
               </View>
@@ -157,10 +166,12 @@ const MyCart = () => {
                   </View>
                 </View>
                 <View style={styles.line}></View>
+                <TouchableOpacity onPress={pay}>
                 <View style={styles.pMethodView}>
                   <Text style={styles.pMethodText}>Payment Method</Text>
                   <Text style={styles.pMethod}>Cash</Text>
                 </View>
+                </TouchableOpacity>
               </View>
 
               <TouchableOpacity style={styles.btn2}>
@@ -171,7 +182,7 @@ const MyCart = () => {
         </ScrollView>
         {/* </ImageBackground> */}
       </View>
-    </TouchableWithoutFeedback>
+    // </TouchableWithoutFeedback>
   );
 };
 
@@ -289,7 +300,7 @@ const styles = StyleSheet.create({
   addImage: {
     width: 40,
     height: 40,
-    backgroundColor: 'blue',
+    backgroundColor: '#009DFE',
     marginHorizontal: 45,
   },
   itemName: {
@@ -304,13 +315,13 @@ const styles = StyleSheet.create({
     marginTop: 30,
     padding: 8,
     borderRadius: 5,
-    borderColor: 'blue',
+    borderColor: '#009DFE',
     borderWidth: 2,
     height: 45,
     width: 300,
   },
   btnText: {
-    color: 'blue',
+    color: '#009DFE',
     fontSize: 17,
     fontWeight: 'bold',
   },
@@ -319,7 +330,7 @@ const styles = StyleSheet.create({
   },
   cartText: {
     marginTop: 40,
-    color: '#009dfe',
+    color: 'blue',
     fontWeight: 'bold',
     fontSize: 17,
     textDecorationLine: 'underline',
@@ -354,7 +365,7 @@ const styles = StyleSheet.create({
   },
   pMethod: {
     fontSize: 15,
-    color: '#009dfe',
+    color: 'blue',
     textDecorationLine: 'underline',
   },
   btn2: {

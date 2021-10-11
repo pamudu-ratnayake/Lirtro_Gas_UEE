@@ -58,7 +58,7 @@ const MyProfile = ({navigation}) => {
       <View style={styles.imgView}>
         <ImageBackground
           style={styles.profImg}
-          source={require('../assets/images/profile-avatar.png')}
+          source={require('../assets/images/dealerProfile.jpg')}
         />
       </View>
       <View style={styles.detailArea}>
@@ -87,7 +87,7 @@ const MyProfile = ({navigation}) => {
             <Text style={styles.feedbackkBtnText}>Feedback</Text>
           </View>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.feedbackkbtn} onPress={login}>
+        <TouchableOpacity style={styles.feedbackkbtn}>
           <View>
             <Text style={styles.feedbackkBtnText}>Hot Line : 1311</Text>
           </View>
@@ -128,6 +128,7 @@ const styles = StyleSheet.create({
     height: 150,
     justifyContent: 'center',
     marginTop: 60,
+    borderRadius: 90,
   },
   imgView: {
     flex: 1,

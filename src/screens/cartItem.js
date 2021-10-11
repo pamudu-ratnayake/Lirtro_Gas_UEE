@@ -250,7 +250,7 @@ const styles = StyleSheet.create({
   addImage: {
     width: 40,
     height: 40,
-    backgroundColor: 'blue',
+    backgroundColor: '#009DFE',
     marginHorizontal: 45,
   },
   itemName: {
@@ -260,7 +260,7 @@ const styles = StyleSheet.create({
   btn: {
     flex: 1,
     alignItems: 'center',
-    backgroundColor: 'blue',
+    backgroundColor: '#009DFE',
     padding: 8,
     fontSize: 12,
     borderRadius: 5,
@@ -272,6 +272,7 @@ const styles = StyleSheet.create({
   btnText: {
     color: '#fff',
     fontSize: 16,
+    fontWeight:'bold'
 
     // fontWeight: 'bold'
   },

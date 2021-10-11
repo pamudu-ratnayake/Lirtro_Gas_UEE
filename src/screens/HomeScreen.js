@@ -25,9 +25,7 @@ const HomeScreen = ({navigation}) => {
     navigation.navigate('AddAddress');
   };
 
-  const register = () => {
-    navigation.navigate('Map');
-  };
+
 
   const [selectedValue, setSelectedValue] = useState('Home');
 
@@ -75,7 +73,7 @@ const HomeScreen = ({navigation}) => {
           </View>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.cardView} onPress={register}>
+        <TouchableOpacity style={styles.cardView} onPress={pressHandler}>
           <View>
             <Image
               style={styles.images}

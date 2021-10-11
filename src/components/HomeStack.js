@@ -75,28 +75,39 @@ const switchNavigator = createSwitchNavigator({
           },
           OrderDealer: {
             screen: OrderDealer,
-            headerTitle: () => <Header title="LITRO GAS" />,
+            navigationOptions: {
+              headerTitle: () => <Header title="LITRO GAS" />,
+            },
           },
           ProfileDealer: {
             screen: ProfileDealer,
-            headerTitle: () => <Header title="LITRO GAS" />,
+            navigationOptions: {
+              headerTitle: () => <Header title="LITRO GAS" />,
+            },
           },
-          Login: {
-            screen: Login,
-            headerTitle: () => <Header title="LOG IN" />,
-          },
+
           Register: {
             screen: Register,
             headerTitle: () => <Header title="LITRO GAS" />,
           },
           MyCart: {
             screen: MyCart,
-            headerTitle: () => <Header title="LITRO GAS" />,
+            navigationOptions: {
+              headerTitle: () => <Header title="MY CART" />,
+            },
           },
           Map: {
             screen: Map,
-            headerTitle: () => <Header title="LITRO GAS" />,
+            navigationOptions: {
+              headerTitle: () => <Header title="LITRO GAS" />,
+            },
           },
+          Payment : {
+            screen : Payment,
+            navigationOptions: {
+              headerTitle: () => <Header title="LITRO GAS" />,
+            },
+          }
         },
         {
           defaultNavigationOptions: {
@@ -122,8 +133,10 @@ const switchNavigator = createSwitchNavigator({
       Orders: createStackNavigator(
         {
           Orders: {
-            screen: HomeDealer,
-            headerTitle: () => <Header title="LITRO GAS" />,
+            screen: Orders,
+            navigationOptions: {
+              headerTitle: () => <Header title="LITRO GAS" />,
+            },
           },
         },
         {
@@ -141,7 +154,9 @@ const switchNavigator = createSwitchNavigator({
         {
           MyProfile: {
             screen: MyProfile,
-            headerTitle: () => <Header title="LITRO GAS" />,
+            navigationOptions: {
+              headerTitle: () => <Header title="LITRO GAS" />,
+            },
           },
         },
         {

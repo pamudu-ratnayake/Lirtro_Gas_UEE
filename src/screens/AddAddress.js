@@ -15,7 +15,12 @@ import {Picker} from '@react-native-picker/picker';
 import {Formik} from 'formik';
 import axios from 'axios';
 
-const AddAddress = () => {
+const AddAddress = ({navigation}) => {
+
+  const map = () => {
+    navigation.navigate('Map');
+  };
+
   const [selectedValue, setSelectedValue] = useState('');
 
   return (
@@ -124,10 +129,12 @@ const AddAddress = () => {
                 <Text style={styles.orTxt}>or</Text>
                 <View style={styles.hrLine} />
               </View>
+              <TouchableOpacity onPress={map}>
               <Image
                 style={styles.profImage}
-                source={require('../assets/images/map1.jpg')}
+                source={require('../assets/images/location.png')}                
               />
+              </TouchableOpacity>
               <View style={styles.submitBtn}>
               <Button title="Add Address" onPress={props.handleSubmit} /> 
               </View>
@@ -159,8 +166,8 @@ const styles = StyleSheet.create({
   },
   profImage: {
     margin: 20,
-    width: 370,
-    height: 200,
+    width: 355,
+    height: 180,
   },
   hrLine: {
     borderWidth: 0.6,
