@@ -100,7 +100,7 @@ const switchNavigator = createSwitchNavigator({
       Orders: createStackNavigator(
         {
           Orders: {
-            screen: HomeDealer,
+            screen: Orders,
             headerTitle: () => <Header title="LITRO GAS" />,
           },
         },

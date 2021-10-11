@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import PastOrder from './PastOrder';
+import Payment from "./payment";
 import Review from "./Review";
 
 const Orders = ({navigation}) => {
@@ -40,31 +41,31 @@ const Orders = ({navigation}) => {
       </View>
       <View style={{margin:10}} > 
       { pastOrder && 
+      <View>
        <View style={styles.row} >
         <PastOrder/>
        </View>
+            <View style={styles.row}>
+            <Review  />
+          </View>
+          </View>
       }
       {
         currentOrder && 
-        <View style={styles.row}>
-          <Text>
-            Current Orders.....
-          </Text>
+        <View>
+          <View style={styles.row}>
+            <PastOrder/>
+          </View>
+          <View style={styles.row}>
+              <Payment/>
+          </View>
         </View>
       }
-
        </View>
-  <View>
-  <TouchableOpacity style={styles.button}
-           onPress={pressHandler} >
-          <Text style={styles.buttonLabel} >
-       Go Payment
-          </Text>
-        </TouchableOpacity>
-  </View>
-      <View style={styles.reviewBtn}>
-        <Review  />
+      <View>
+     
       </View>
+ 
   
   
     </View>
