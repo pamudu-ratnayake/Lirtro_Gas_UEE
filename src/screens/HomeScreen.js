@@ -26,7 +26,7 @@ const HomeScreen = ({navigation}) => {
   };
 
   const register = () => {
-    navigation.navigate('Register');
+    navigation.navigate('Map');
   };
 
   const [selectedValue, setSelectedValue] = useState('Home');

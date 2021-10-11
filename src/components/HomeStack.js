@@ -22,6 +22,8 @@ import PendingOrders from '../screens/pendingOrders';
 import Summery from '../screens/Summery';
 import Login from '../screens/login';
 import Register from '../screens/register';
+import Map from '../screens/map';
+
 
 const switchNavigator = createSwitchNavigator({
   mainFlow: createMaterialBottomTabNavigator(
@@ -67,6 +69,10 @@ const switchNavigator = createSwitchNavigator({
             screen: MyCart,
             headerTitle: () => <Header title="LITRO GAS" />,
           },
+          Map: {
+            screen: Map,
+            headerTitle: () => <Header title="LITRO GAS" />,
+          }
         },
         {
           defaultNavigationOptions: {
