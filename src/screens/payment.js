@@ -7,6 +7,9 @@ import { SegmentedControls } from 'react-native-radio-buttons'
 const Payment = () => {
   const [modalVisible, setModalVisible] = useState(false);
   const [text, onChangeText] = React.useState();
+  const [valid, onChangevalid] = React.useState();
+  const [cvv, onChangecvv] = React.useState();
+  const [name, onChangename] = React.useState();
   const [checked, setChecked] = React.useState('first');
 
   const options = [
@@ -63,15 +66,15 @@ const Payment = () => {
               <View style={styles.col}>
                   <TextInput
                   style={styles.inputValid}
-                  onChangeText={onChangeText}
-                  value={text}
+                  onChangeText={onChangevalid}
+                  value={valid}
                 />
               </View>
               <View style={styles.col}>
                   <TextInput
                   style={styles.inputCVV}
-                  onChangeText={onChangeText}
-                  value={text}
+                  onChangeText={onChangecvv}
+                  value={cvv}
                 />
               </View>
             </View>
@@ -79,8 +82,8 @@ const Payment = () => {
             <Text style={styles.textCardName}>Name on Card</Text>
             <TextInput
               style={styles.input}
-              onChangeText={onChangeText}
-              value={text}
+              onChangeText={onChangename}
+              value={name}
             />
          
            <View style={styles.row} >

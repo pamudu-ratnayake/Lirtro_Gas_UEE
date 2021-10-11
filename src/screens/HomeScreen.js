@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {
   View,
   Image,
@@ -11,16 +11,48 @@ import {
   TouchableOpacity,
 } from 'react-native';
 
+// import DropDownPicker from 'react-native-dropdown-picker';
+import {Picker} from '@react-native-picker/picker';
+import { PickerItem } from 'react-native/Libraries/Components/Picker/Picker';
+
 const HomeScreen = ({navigation}) => {
+  
   const pressHandler = () => {
-    navigation.navigate('Test2');
+    navigation.navigate('Product');
   };
+
+  const addAddress = () => {
+    navigation.navigate('AddAddress');
+  };
+
+  const register = () => {
+    navigation.navigate('Register');
+  };
+
+  const [selectedValue, setSelectedValue] = useState('Home');
 
   return (
     <ScrollView>
-      <TextInput
+      {/* <TextInput
         placeholder="Delivery to :"
-        style={styles.deliverTo}></TextInput>
+        style={styles.deliverTo}></TextInput> */}
+        <View style={styles.addressRow}>
+      <View style={styles.deliverTo}>
+        <Picker
+        style={{ marginTop:-10}}
+          selectedValue={selectedValue}
+          onValueChange={(itemValue, itemIndex) => setSelectedValue(itemValue)}>
+          <Picker.Item label="Home" value="Home" />
+          <Picker.Item label="Work" value="Work" />
+        </Picker>
+      </View>
+      <TouchableOpacity style={styles.addressBtn} onPress={addAddress}>
+        <View>
+          <Text style={styles.addBtnText}>New Address</Text>
+        </View>
+      </TouchableOpacity>
+      </View>
+
       <TouchableOpacity style={styles.cardView} onPress={pressHandler}>
         <View>
           <Image
@@ -37,7 +69,7 @@ const HomeScreen = ({navigation}) => {
         </View>
       </TouchableOpacity>
 
-      <TouchableOpacity style={styles.cardView} onPress={pressHandler}>
+      <TouchableOpacity style={styles.cardView} onPress={register}>
         <View>
           <Image
             style={styles.images}
@@ -101,19 +133,18 @@ const HomeScreen = ({navigation}) => {
         </View>
       </TouchableOpacity>
     </ScrollView>
-    // <Container>
-    //   <Text>Welcome to login</Text>
-    // </Container>
+    
   );
 };
 
 const styles = StyleSheet.create({
   deliverTo: {
     backgroundColor: '#FFFFFF',
-    margin: 8,
+    marginLeft: 8,
     borderRadius: 8,
     height: 35,
     paddingLeft: 10,
+    width: 250
   },
   cardView: {
     margin: 8,
@@ -141,6 +172,24 @@ const styles = StyleSheet.create({
   placeOrderBtn: {
     marginTop: 10,
   },
+  addressRow: {
+    flexDirection:'row',
+    marginTop:12
+  },
+  addressBtn: {
+    backgroundColor:"#009DFE",
+    height:35,
+    width:135,
+    marginLeft:10,
+    borderRadius: 8,  
+    justifyContent:"center" 
+  },
+  addBtnText: {
+    color:"white",
+    textAlign:"center",
+    fontSize:16,
+    fontWeight:"bold"
+  }
 });
 
 export default HomeScreen;

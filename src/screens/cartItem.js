@@ -1,4 +1,5 @@
-import React from 'react';
+import React, {useState} from 'react';
+// import {useCart} from "react-use-cart";
 import {
   View,
   Text,
@@ -13,16 +14,124 @@ import {
 } from 'react-native';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 
-// const image = require('../assets/images/background.png');
+const image = require('../assets/images/background.png');
 
-const CartItem = () => {
+
+
+const CartItem = ({navigation}) => {
+
+  const mycart = () => {
+    navigation.navigate('MyCart')
+  }
+  // const{
+  //   Items,
+  //   totalItems,
+  //     }
+  // = useCart();
+
+  const [count, setCount] = useState(1);
+  const [newPackage, setnewPackage] = useState(1250);
+
+  function handleIncremet() {
+    // for (var i = 0; i < 10; i++) {
+    //   setCount = i;
+    if (count >= 10) {
+      setCount(10);
+    } else {
+      setCount(1 + count);
+    }
+  }
+  function handleChange1() {
+    let total = 0;
+    if (count >= 10) {
+      total = 1250 * 10;
+    } else {
+      total = 1250 * (count + 1);
+      setnewPackage(total);
+    }
+  }
+  // }
+
+  function handleDecremet() {
+    // for (var i = 0; i < 0; i--) {
+    //   setCount = i;
+    if (count <= 1) {
+      setCount(1);
+    } else {
+      setCount(count - 1);
+    }
+  }
+  function handleChange2() {
+    let total = 0;
+    if (count <= 1) {
+      total = 1250 * 1;
+    } else {
+      total = 1250 * (count - 1);
+      setnewPackage(total);
+    }
+  }
+  // }
+
+  // var items = ['1 day', '3 day', '5 day', '10 day', '20 day', '30 day'];
+  // const [newPackage, setnewPackage] = useState(0);
+
+  // function handleChange() {
+  // let total = 0;
+  // if(itemName.value== "2.3kg Litro Regular Refill"){
+  //       total = 1250*count;
+  //       setnewPackage(newPackage=total);
+  // }
+
+  //       for (var i = 0; i < items .length; i++){
+
+  //      if(event.target.value == items [i]);{
+
+  //        switch(event.target.value)
+  //       {
+  //         case '1 day':
+  //            setnewPackage('LKR.500.00');
+
+  //            break;
+
+  //          case '3 day':
+  //            setnewPackage('LKR. 750.00');
+
+  //            break;
+
+  //          case '5 day':
+  //            setnewPackage('LKR. 1000.00');
+
+  //            break;
+
+  //          case '10 day':
+  //            setnewPackage('LKR. 1500.00');
+  //            break;
+
+  //          case '20 day':
+  //            setnewPackage('LKR. 3000.00');
+  //            break;
+
+  //          case '30 day':
+  //            setnewPackage('LKR. 5000.00');
+  //            break;
+
+  //          default:
+  //            setnewPackage('LKR. 00.00');
+  //                  break;
+  //       }
+
+  //      }
+  //      break;
+  //  }
+  // }
+
   return (
     <TouchableWithoutFeedback
       onPress={() => {
         Keyboard.dismiss();
       }}>
       <View style={styles.container}>
-        {/* <ImageBackground source={image} style={styles.image} resizeMode="cover"> */}
+        <ImageBackground source={image} style={styles.image} resizeMode="cover">
         <ScrollView>
           <View style={styles.card}>
             <View style={styles.itemDetails}>
@@ -30,37 +139,53 @@ const CartItem = () => {
                 style={styles.itemImage}
                 source={require('../assets/images/litro.jpg')}
               />
-              <Text style={styles.itemName}>2.3kg Litro Regular Refill</Text>
+              <Text style={styles.itemName} name="itemName">
+                2.3kg Litro Regular Refill
+              </Text>
               <Text style={styles.itemName}>LKR 1250.00</Text>
               <Text style={styles.selItm}>Select Quantity</Text>
             </View>
             <View style={styles.countQty}>
-              <TouchableOpacity>
+              <TouchableOpacity
+                onPress={function (e) {
+                  handleDecremet();
+                  handleChange2();
+                }}>
                 <Image
                   style={styles.addImage}
-                  source={require('../assets/images/outline_remove_white_24dp.png')}
+                  source={require('../assets/images/icons/outline_remove_white_24dp.png')}
                 />
               </TouchableOpacity>
-              <Text style={styles.itemName}>1 </Text>
-              <TouchableOpacity>
+              <TextInput keyboardType="numeric" style={styles.itemName}>
+                {count}
+              </TextInput>
+              <TouchableOpacity
+                onPress={function (e) {
+                  handleIncremet();
+                  handleChange1();
+                }}>
                 <Image
                   style={styles.addImage}
-                  source={require('../assets/images/outline_add_white_24dp.png')}
+                  source={require('../assets/images/icons/outline_add_white_24dp.png')}
                 />
               </TouchableOpacity>
             </View>
             <View style={styles.totPrice}>
               <Text style={styles.totText}>Total </Text>
-              <Text style={styles.totText}>LKR 1250.00 </Text>
+              <Text style={styles.totText}>LKR.{newPackage} </Text>
             </View>
             <View style={styles.btn}>
-              <TouchableOpacity>
+              <TouchableOpacity
+                onPress={function (e) {
+                  setBoostPK(e.target.value);
+                  handleChange();
+                }}>
                 <Text style={styles.btnText}>Add to Cart</Text>
               </TouchableOpacity>
             </View>
           </View>
         </ScrollView>
-        {/* </ImageBackground> */}
+        </ImageBackground>
       </View>
     </TouchableWithoutFeedback>
   );
@@ -71,6 +196,10 @@ const styles = StyleSheet.create({
     flex: 1,
     // padding: 20,
     // backgroundColor: '#ddd',
+  },
+  image: {
+    flex: 1,
+    justifyContent: 'center',
   },
   card: {
     flex: 1,
@@ -95,7 +224,7 @@ const styles = StyleSheet.create({
   countQty: {
     flex: 1,
     flexDirection: 'row',
-    alignItems: 'center'
+    alignItems: 'center',
   },
   selItm: {
     fontSize: 15,
