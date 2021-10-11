@@ -54,7 +54,7 @@ const ProfileDealer = () => {
             <View style={styles.dealerInfor}>
               <Text style={styles.text1}>Address </Text>
               <Text style={styles.text2}>
-                No. 56, Temple Road, Kottawa, Pannipitiya{' '}
+                No. 56, Temple Road, Kottawa, Pannipitiya
               </Text>
             </View>
 
