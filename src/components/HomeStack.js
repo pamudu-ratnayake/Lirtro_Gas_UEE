@@ -24,8 +24,24 @@ import Login from '../screens/login';
 import Register from '../screens/register';
 import Map from '../screens/map';
 
-
 const switchNavigator = createSwitchNavigator({
+  Login: createStackNavigator({
+    Login: {
+      screen: Login,
+      navigationOptions: {
+        headerTitle: () => <Header title="LOG IN" />,
+      },
+    },
+  },
+  {
+    defaultNavigationOptions: {
+      headerStyle: {
+        backgroundColor: '#2553A8',
+        height: 50,
+      },
+      headerTintColor: '#FFFFFF',
+    },
+  },),
   mainFlow: createMaterialBottomTabNavigator(
     {
       Home: createStackNavigator(
@@ -57,9 +73,9 @@ const switchNavigator = createSwitchNavigator({
             screen: ProfileDealer,
             headerTitle: () => <Header title="LITRO GAS" />,
           },
-          LogInUI: {
+          Login: {
             screen: Login,
-            headerTitle: () => <Header title="LITRO GAS" />,
+            headerTitle: () => <Header title="LOG IN" />,
           },
           Register: {
             screen: Register,
@@ -72,7 +88,7 @@ const switchNavigator = createSwitchNavigator({
           Map: {
             screen: Map,
             headerTitle: () => <Header title="LITRO GAS" />,
-          }
+          },
         },
         {
           defaultNavigationOptions: {

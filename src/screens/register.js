@@ -9,24 +9,36 @@ import {
   ScrollView,
   TextInput,
   TouchableOpacity,
+  ImageBackground,
 } from 'react-native';
 import {Picker} from '@react-native-picker/picker';
 
 const Register = ({navigation}) => {
 
-  return (
+  const login = () => {
+    
+  }
 
+  return (
+    <View style={styles.container}>
     <ScrollView>
-    <View style={styles.inputGroup}>
-    <View style={styles.firstRow}>
-        <View style={{width:200}}>
-          <Text style={styles.lableOnInput}>First Name</Text>
-          <TextInput style={styles.inputfld}></TextInput>
-        </View>
-        <View style={{width:200}}>
-          <Text style={styles.lableOnInput}>Last Name</Text>
-          <TextInput style={styles.inputfld}></TextInput>
-        </View>
+      <View style={{alignItems: 'center'}}>
+        <ImageBackground
+          style={styles.logo}
+          source={require('../assets/images/logo.png')}
+        />
+      </View>
+
+      <View style={styles.inputGroup}>
+        <View style={styles.firstRow}>
+          <View style={{width: 195}}>
+            <Text style={styles.lableOnInput}>First Name</Text>
+            <TextInput style={styles.inputfld}></TextInput>
+          </View>
+          <View style={{width: 195}}>
+            <Text style={styles.lableOnInput}>Last Name</Text>
+            <TextInput style={styles.inputfld}></TextInput>
+          </View>
         </View>
         <View>
           <Text style={styles.lableOnInput}>Email Address</Text>
@@ -44,11 +56,13 @@ const Register = ({navigation}) => {
           <Text style={styles.lableOnInput}>Confirm New Password</Text>
           <TextInput style={styles.inputfld}></TextInput>
         </View>
+        <View style={{marginHorizontal:20, marginTop:30}}>
         <Button title="Register"></Button>
-    </View>
-    <View style={styles.bottomgrp}>
-      <Text>Already have an account?</Text>
-      <TouchableOpacity style={styles.bottomgrp}>
+        </View>
+      </View>
+      <View style={styles.bottomgrp}>
+      <Text style={{color:'#FFFFFF'}}>Already have an account?</Text>
+      <TouchableOpacity style={{marginTop:10}} onPress={login}>
       <View style={styles.regbtn}>
         <Text style={styles.regBtnText}>
           Login Now
@@ -57,15 +71,14 @@ const Register = ({navigation}) => {
     </TouchableOpacity>
     </View>
     </ScrollView>
-
+    </View>
   );
 };
 
-
 const styles = StyleSheet.create({
   inputGroup: {
-    margin: 10,  
-    marginTop: 50,
+    margin: 10,
+    marginTop: 20,
   },
   inputfld: {
     backgroundColor: '#FFFFFF',
@@ -77,30 +90,40 @@ const styles = StyleSheet.create({
   lableOnInput: {
     marginLeft: 10,
     fontSize: 16,
+    color:'#FFFFFF'
   },
   firstRow: {
-      flexDirection:'row'
+    flexDirection: 'row',
   },
   bottomgrp: {
-    margin:30,
-    alignItems:'center'
+    margin: 30,
+    alignItems: 'center',
   },
   regbtn: {
-    backgroundColor:'#009DFE',
-    width:350,
-    height:35,
-    borderRadius:4,
-    alignItems:'center',
-    justifyContent:'center',
-    borderWidth:2,
-    backgroundColor:null,
-    borderColor:'#009DFE'
+    backgroundColor: '#009DFE',
+    width: 350,
+    height: 35,
+    borderRadius: 4,
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderWidth: 2,
+    backgroundColor: null,
+    borderColor: '#009DFE',
   },
   regBtnText: {
-    fontWeight:'bold',
-    fontSize:16,
-    color:'white'
-  }
+    fontWeight: 'bold',
+    fontSize: 16,
+    color: 'white',
+  },
+  container: {
+    backgroundColor: '#062F6E',
+    flex: 1,
+  },
+  logo: {
+    width: 100,
+    height: 100,
+    marginTop: 20,
+  },
 });
 
 export default Register;

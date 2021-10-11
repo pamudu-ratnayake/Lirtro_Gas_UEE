@@ -9,6 +9,7 @@ import {
   ScrollView,
   TextInput,
   TouchableOpacity,
+  ImageBackground,
 } from 'react-native';
 import {Picker} from '@react-native-picker/picker';
 import {Formik} from 'formik';
@@ -19,6 +20,7 @@ const AddAddress = () => {
 
   return (
     <ScrollView>
+      <ImageBackground source={require('../assets/images/background.png')} style={styles.image} resizeMode="cover">
       <View style={styles.inputGroup}>
         <Formik
           initialValues={{
@@ -53,6 +55,7 @@ const AddAddress = () => {
                     }>
                     <Picker.Item label="Home" value="Home" />
                     <Picker.Item label="Company" value="Company" />
+                    <Picker.Item label="Other" value="Other" />
                   </Picker>
                 </View>
               </View>
@@ -116,20 +119,23 @@ const AddAddress = () => {
                   onChangeText={props.handleChange('city')}
                   value={props.values.city} />
               </View>
-              <Button color='maroon' title="Submit" onPress={props.handleSubmit} /> 
+              <View style={styles.hrLineGrp}>
+                <View style={styles.hrLine} />
+                <Text style={styles.orTxt}>or</Text>
+                <View style={styles.hrLine} />
+              </View>
+              <Image
+                style={styles.profImage}
+                source={require('../assets/images/map1.jpg')}
+              />
+              <View style={styles.submitBtn}>
+              <Button title="Add Address" onPress={props.handleSubmit} /> 
+              </View>
             </View>
           )}
         </Formik>
       </View>
-      <View style={styles.hrLineGrp}>
-        <View style={styles.hrLine} />
-        <Text style={styles.orTxt}>or</Text>
-        <View style={styles.hrLine} />
-      </View>
-      <Image
-        style={styles.profImage}
-        source={require('../assets/images/map1.jpg')}
-      />
+      </ImageBackground>
     </ScrollView>
   );
 };
@@ -166,6 +172,14 @@ const styles = StyleSheet.create({
   },
   orTxt: {
     marginTop: 10,
+  },
+  submitBtn: {
+    width: 350,
+    marginLeft:20
+  },
+  image: {
+    flex: 1,
+    justifyContent: 'center',
   },
 });
 

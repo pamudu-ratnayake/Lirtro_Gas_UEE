@@ -24,7 +24,7 @@ const CartItem = ({navigation}) => {
     navigation.navigate('MyCart')
   }
 
-const CartItem = () => {
+// const CartItem = () => {
   // const{
   //   Items,
   //   totalItems,
@@ -178,10 +178,8 @@ const CartItem = () => {
             </View>
             <View style={styles.btn}>
               <TouchableOpacity
-                onPress={function (e) {
-                  setBoostPK(e.target.value);
-                  handleChange();
-                }}>
+                onPress={mycart}
+                >
                 <Text style={styles.btnText}>Add to Cart</Text>
               </TouchableOpacity>
             </View>

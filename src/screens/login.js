@@ -9,14 +9,23 @@ import {
   ScrollView,
   TextInput,
   TouchableOpacity,
+  ImageBackground,
 } from 'react-native';
 import {Picker} from '@react-native-picker/picker';
 
 const Login = ({navigation}) => {
 
+  const register = () => {
+    navigation.navigate('Register')
+  }
+
   return (
 
+    <View style={styles.container}>
     <ScrollView>
+      <View style={{alignItems:'center'}}>
+      <ImageBackground style={styles.logo} source={require("../assets/images/logo.png")} />
+      </View>
     <View style={styles.inputGroup}>
     <View >
           <Text style={styles.lableOnInput}>Email :</Text>
@@ -26,11 +35,13 @@ const Login = ({navigation}) => {
           <Text style={styles.lableOnInput}>Password :</Text>
           <TextInput style={styles.inputfld}></TextInput>
         </View>
+        <View style={{marginHorizontal:20, marginTop:30}}>
         <Button title="Login"></Button>
+        </View>
     </View>
     <View style={styles.bottomgrp}>
-      <Text>Don't have an account?</Text>
-      <TouchableOpacity style={styles.bottomgrp}>
+      <Text style={{color:'#FFFFFF'}}>Don't have an account?</Text>
+      <TouchableOpacity style={{marginTop:10}} onPress={register}>
       <View style={styles.regbtn}>
         <Text style={styles.regBtnText}>
           Register Now
@@ -40,15 +51,14 @@ const Login = ({navigation}) => {
     </View>
 
     </ScrollView>
-
+    </View>
   );
 };
-
 
 const styles = StyleSheet.create({
   inputGroup: {
     margin: 10,
-    marginTop: 8,
+    marginTop: 80,
   },
   inputfld: {
     backgroundColor: '#FFFFFF',
@@ -61,10 +71,12 @@ const styles = StyleSheet.create({
     // marginTop: 12,
     marginLeft: 10,
     fontSize: 16,
+    color:'#FFFFFF'
   },
   bottomgrp: {
     margin:30,
-    alignItems:'center'
+    alignItems:'center',
+    marginTop:180
   },
   regbtn: {
     backgroundColor:'#009DFE',
@@ -81,6 +93,15 @@ const styles = StyleSheet.create({
     fontWeight:'bold',
     fontSize:16,
     color:'white'
+  },
+  container: {
+    backgroundColor:'#062F6E',
+    flex:1
+  },
+  logo: {
+    width:100,
+    height:100,
+    marginTop:30
   }
 });
 

@@ -24,7 +24,7 @@ const MyProfile = ({navigation}) => {
   };
 
   const login = () => {
-    navigation.navigate('LogInUI');
+    navigation.navigate('Login');
   };
 
 
@@ -168,7 +168,7 @@ const styles = StyleSheet.create({
   BtnView: {
     marginBottom: 20,
     alignItems: 'center',
-    marginTop: 150,
+    marginTop: 110,
   },
   modalBody: {
     backgroundColor: '#FFFFFF',
