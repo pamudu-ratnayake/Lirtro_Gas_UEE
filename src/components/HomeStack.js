@@ -11,6 +11,8 @@ import CartItem from '../screens/cartItem';
 import HomeDealer from '../screens/homeDealer';
 import SelectDealer from '../screens/selectDealer';
 import AddAddress from '../screens/AddAddress';
+import Orders from '../screens/Orders';
+import Payment from '../screens/payment';
 import OrderDealer from '../screens/orderDealer';
 import ProfileDealer from '../screens/profileDealer';
 import MyProfile from '../screens/myProfile';
@@ -39,6 +41,12 @@ const switchNavigator = createSwitchNavigator({
             screen: CartItem,
             navigationOptions: {
               headerTitle: () => <Header title="PRODUCT" />,
+            },
+          },
+          Payment: {
+            screen: Payment,
+            navigationOptions: {
+              headerTitle: () => <Header title="Payment" />,
             },
           },
           AddAddress: {
@@ -106,7 +114,8 @@ const switchNavigator = createSwitchNavigator({
           },
         },
       ),
-      Profile: createStackNavigator(
+ 
+        Profile: createStackNavigator(
         {
           MyProfile: {
             screen: MyProfile,
