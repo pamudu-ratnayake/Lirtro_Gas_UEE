@@ -14,7 +14,15 @@ import {
 } from 'react-native';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 
-// const image = require('../assets/images/background.png');
+const image = require('../assets/images/background.png');
+
+
+
+const CartItem = ({navigation}) => {
+
+  const mycart = () => {
+    navigation.navigate('MyCart')
+  }
 
 const CartItem = () => {
   // const{
@@ -125,7 +133,7 @@ const CartItem = () => {
         Keyboard.dismiss();
       }}>
       <View style={styles.container}>
-        {/* <ImageBackground source={image} style={styles.image} resizeMode="cover"> */}
+        <ImageBackground source={image} style={styles.image} resizeMode="cover">
         <ScrollView>
           <View style={styles.card}>
             <View style={styles.itemDetails}>
@@ -147,7 +155,7 @@ const CartItem = () => {
                 }}>
                 <Image
                   style={styles.addImage}
-                  source={require('../assets/images/outline_remove_white_24dp.png')}
+                  source={require('../assets/images/icons/outline_remove_white_24dp.png')}
                 />
               </TouchableOpacity>
               <TextInput keyboardType="numeric" style={styles.itemName}>
@@ -160,7 +168,7 @@ const CartItem = () => {
                 }}>
                 <Image
                   style={styles.addImage}
-                  source={require('../assets/images/outline_add_white_24dp.png')}
+                  source={require('../assets/images/icons/outline_add_white_24dp.png')}
                 />
               </TouchableOpacity>
             </View>
@@ -179,7 +187,7 @@ const CartItem = () => {
             </View>
           </View>
         </ScrollView>
-        {/* </ImageBackground> */}
+        </ImageBackground>
       </View>
     </TouchableWithoutFeedback>
   );
@@ -190,6 +198,10 @@ const styles = StyleSheet.create({
     flex: 1,
     // padding: 20,
     // backgroundColor: '#ddd',
+  },
+  image: {
+    flex: 1,
+    justifyContent: 'center',
   },
   card: {
     flex: 1,
