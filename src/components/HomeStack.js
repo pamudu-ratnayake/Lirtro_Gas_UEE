@@ -7,7 +7,7 @@ import HomeScreen from '../screens/HomeScreen';
 
 import React from 'react';
 import Header from './Header';
-// import CartItem from '../screens/cartItem';
+import CartItem from '../screens/cartItem';
 import HomeDealer from '../screens/homeDealer';
 import SelectDealer from '../screens/selectDealer';
 import AddAddress from '../screens/AddAddress';
@@ -17,7 +17,7 @@ import MyProfile from '../screens/myProfile';
 import AcceptedOrders from '../screens/acceptedOrder';
 import DeliveredOrders from '../screens/deliveredOrders';
 import DispatchedOrders from '../screens/dispatchedOrders';
-// import MyCart from '../screens/Mycart';
+import MyCart from '../screens/Mycart';
 import PendingOrders from '../screens/pendingOrders';
 import Summery from '../screens/Summery';
 import Login from '../screens/login';
@@ -30,7 +30,7 @@ const switchNavigator = createSwitchNavigator({
       Home: createStackNavigator(
         {
           HomeTop: {
-            screen: HomeDealer,
+            screen: CartItem,
             navigationOptions: {
               headerTitle: () => <Header title="LITRO GAS" />,
             },

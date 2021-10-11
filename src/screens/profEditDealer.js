@@ -8,9 +8,12 @@ import {
   TouchableOpacity,
 } from 'react-native';
 
+const image = require('../assets/images/background.png');
+
 const ProfEditDealer = () => {
   return (
     <View style={styles.container}>
+      <ImageBackground source={image} style={styles.image} resizeMode="cover">
       <ScrollView>
         <View style={styles.inputGroup}>
           <View style={styles.inputGroup}>
@@ -38,6 +41,7 @@ const ProfEditDealer = () => {
           </View>
         </View>
       </ScrollView>
+      </ImageBackground>
     </View>
   );
 };

@@ -15,7 +15,7 @@ import {
 import {TouchableOpacity} from 'react-native-gesture-handler';
 import StarRating from 'react-native-star-rating';
 
-// const image = require('../assets/img/background.png');
+const image = require('../assets/images/background.png');
 
 const ProfileDealer = () => {
   // const [starCount, setState] = useState(3.5);
@@ -28,7 +28,7 @@ const ProfileDealer = () => {
         Keyboard.dismiss();
       }}>
       <View style={styles.container}>
-        {/* <ImageBackground source={image} style={styles.image} resizeMode="cover"> */}
+        <ImageBackground source={image} style={styles.image} resizeMode="cover">
         <ScrollView>
           <View style={styles.pageView}>
             <Image
@@ -84,7 +84,7 @@ const ProfileDealer = () => {
             </View>
           </View>
         </ScrollView>
-        {/* </ImageBackground> */}
+        </ImageBackground>
       </View>
     </TouchableWithoutFeedback>
   );

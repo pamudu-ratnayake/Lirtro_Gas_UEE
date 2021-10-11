@@ -8,6 +8,7 @@ import {
   TouchableWithoutFeedback,
   Keyboard,
   TouchableOpacity,
+  ImageBackground
 } from 'react-native';
 
 const image = require('../assets/images/background.png');
@@ -35,7 +36,7 @@ const OrderDealer = ({navigation}) => {
         Keyboard.dismiss();
       }}>
       <View style={styles.container}>
-        {/* <ImageBackground source={image} style={styles.image} resizeMode="cover"> */}
+        <ImageBackground source={image} style={styles.image} resizeMode="cover">
         <ScrollView>
           <View style={styles.cardView}>
             <TouchableOpacity style={styles.card} onPress={toAcceptedOrd}>
@@ -71,7 +72,7 @@ const OrderDealer = ({navigation}) => {
             </TouchableOpacity>
           </View>
         </ScrollView>
-        {/* </ImageBackground> */}
+        </ImageBackground>
       </View>
     </TouchableWithoutFeedback>
   );

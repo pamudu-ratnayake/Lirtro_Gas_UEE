@@ -10,7 +10,7 @@ import {
   ImageBackground,
 } from 'react-native';
 
-const image = require('../assets/img/background.png');
+const image = require('../assets/images/background.png');
 
 const PendingOrders = () => {
   return (
@@ -19,7 +19,7 @@ const PendingOrders = () => {
         Keyboard.dismiss();
       }}>
       <View style={styles.container}>
-        {/* <ImageBackground source={image} style={styles.image} resizeMode="cover"> */}
+        <ImageBackground source={image} style={styles.image} resizeMode="cover">
           <ScrollView>
             <View style={styles.card}>
               <Text style={styles.orderInfor1}>OR001</Text>
@@ -273,7 +273,7 @@ const PendingOrders = () => {
               </View>
             </View>
           </ScrollView>
-        {/* </ImageBackground> */}
+        </ImageBackground>
       </View>
     </TouchableWithoutFeedback>
   );
