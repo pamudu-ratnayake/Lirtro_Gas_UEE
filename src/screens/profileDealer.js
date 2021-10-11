@@ -63,6 +63,8 @@ const ProfileDealer = () => {
                 disabled={false}
                 maxStars={5}
                 rating={starCount}
+                backgroundColor= 'blue'
+                fullStarColor={'#FAE105'}
                 // selectedStar={(rating) => onStarRatingPress(rating)}
               />
             </View>

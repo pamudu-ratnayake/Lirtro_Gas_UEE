@@ -30,7 +30,7 @@ const switchNavigator = createSwitchNavigator({
       Home: createStackNavigator(
         {
           HomeTop: {
-            screen: ProfEditDealer,
+            screen: HomeDealer,
             navigationOptions: {
               headerTitle: () => <Header title="LITRO GAS" />,
             },
