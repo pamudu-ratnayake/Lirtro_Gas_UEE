@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {
   View,
   Text,
@@ -12,10 +12,14 @@ import {
   ImageBackground,
 } from 'react-native';
 import {TouchableOpacity} from 'react-native-gesture-handler';
+import {Icon} from 'react-native-elements';
+import {Picker} from '@react-native-picker/picker';
 
 // const image = require('../assets/img/background.png');
 
 const MyCart = () => {
+  const [selectedValue, setSelectedValue] = useState('');
+  const cartCount = 2;
   return (
     <TouchableWithoutFeedback
       onPress={() => {
@@ -24,6 +28,58 @@ const MyCart = () => {
       <View style={styles.container}>
         {/* <ImageBackground source={image} style={styles.image} resizeMode="cover"> */}
         <ScrollView>
+          <View style={styles.IconView}>
+            <Icon
+              name="shoppingcart"
+              type="antdesign"
+              color={'#FFFFFF'}
+              size={22}
+              containerStyle={styles.cartIcon}
+            />
+            {cartCount > 0 ? (
+              <View style={styles.countView}>
+                <Text style={styles.countText}>{cartCount}</Text>
+              </View>
+            ) : null}
+            <View></View>
+          </View>
+
+          {/* <View
+            style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
+            <Icon
+              name="shoppingcart"
+              type="antdesign"
+              color={'#FFFFFF'}
+              size={22}
+              containerStyle={{marginHorizontal: 15, position: 'relative'}}
+            />
+            {cartCount > 0 ? (
+              <View
+                style={{
+                  position: 'absolute',
+                  backgroundColor: 'red',
+                  width: 16,
+                  height: 16,
+                  borderRadius: 15 / 2,
+                  right: 10,
+                  top: +10,
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                }}>
+                <Text
+                  style={{
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    color: '#FFFFFF',
+                    fontSize: 8,
+                  }}>
+                  {cartCount}
+                </Text>
+              </View>
+            ) : null}
+            <View></View>
+          </View> */}
+
           <View>
             <View style={styles.card}>
               <View>
@@ -73,7 +129,7 @@ const MyCart = () => {
               <View style={styles.btn}>
                 {/* <Image
                   style={styles.btnImage}
-                  source={require('../assets/images/plus.png')}
+                  source={require('../assets/images/icons/plus.png')}
                 /> */}
                 <TouchableOpacity>
                   <Text style={styles.btnText}>Add More Product</Text>
@@ -83,8 +139,23 @@ const MyCart = () => {
               <Text style={styles.cartText}>Clear Cart</Text>
 
               <View style={styles.addressView}>
-                <Text style={styles.deliverText}>Deliver To:</Text>
-                <Text style={styles.address}>No.56, Temple Road, Colombo</Text>
+                <View style={styles.inputGroup}>
+                  <Text style={styles.lableOnInput}>Delivery To :</Text>
+
+                  <View style={styles.inputfld}>
+                    <Picker
+                      mode={'dropdown'}
+                      style={{marginTop: -8}}
+                      selectedValue={selectedValue}
+                      onValueChange={(itemValue, itemIndex) =>
+                        setSelectedValue(itemValue)
+                      }>
+                      <Picker.Item label="Home" value="Home" />
+
+                      <Picker.Item label="Company" value="Company" />
+                    </Picker>
+                  </View>
+                </View>
                 <View style={styles.line}></View>
                 <View style={styles.pMethodView}>
                   <Text style={styles.pMethodText}>Payment Method</Text>
@@ -109,6 +180,34 @@ const styles = StyleSheet.create({
     flex: 1,
     // padding: 20,
     // backgroundColor: '#ddd',
+  },
+  IconView: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  cartIcon: {
+    marginLeft: 350,
+    marginTop: 10,
+    position: 'relative',
+  },
+  countView: {
+    position: 'absolute',
+    backgroundColor: 'red',
+    width: 16,
+    height: 16,
+    borderRadius: 15 / 2,
+    right: 10,
+    top: +10,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  countText: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    color: '#FFFFFF',
+    fontSize: 10,
+    fontWeight: 'bold',
   },
   images: {
     height: 100,
@@ -270,6 +369,31 @@ const styles = StyleSheet.create({
   btn2Text: {
     color: '#fff',
     fontSize: 20,
+  },
+  inputfld: {
+    backgroundColor: '#FFFFFF',
+
+    margin: 8,
+
+    borderRadius: 8,
+
+    height: 40,
+
+    paddingLeft: 10,
+  },
+
+  lableOnInput: {
+    // marginTop: 12,
+
+    marginLeft: 10,
+
+    fontSize: 16,
+  },
+
+  inputGroup: {
+    margin: 10,
+
+    marginTop: 8,
   },
 });
 
